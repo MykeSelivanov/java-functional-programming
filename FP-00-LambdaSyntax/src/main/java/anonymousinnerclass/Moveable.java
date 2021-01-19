@@ -6,18 +6,18 @@ public interface Moveable {
 
 }
 
-class DistantMover implements Moveable{
-
-    public void move(int mile) {
-        System.out.println("moving " + mile);
-    }
-
-}
-
-class ShortDistanceMover implements Moveable{
-
-    public void move(int mile) {
-        System.out.println("moving short mile " + mile);
-    }
-
-}
+//class DistantMover implements Moveable{
+//
+//    public void move(int mile) {
+//        System.out.println("moving " + mile);
+//    }
+//
+//}
+//
+//class ShortDistanceMover implements Moveable{
+//
+//    public void move(int mile) {
+//        System.out.println("moving short mile " + mile);
+//    }
+//
+//}
