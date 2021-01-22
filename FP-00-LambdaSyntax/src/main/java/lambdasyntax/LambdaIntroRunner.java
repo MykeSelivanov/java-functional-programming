@@ -25,5 +25,13 @@ public class LambdaIntroRunner {
         multiplier.compute(2,3);
         divider.compute(15,3);
 
+        // parameters and return type
+        Flyable drone = mile -> mile > 10;
+        System.out.println(drone.flyHigh(10));
+        System.out.println(drone.flyHigh(15));
+
+        Flyable seaPlane = mile -> mile<10 && mile%5==0;
+        System.out.println(seaPlane.flyHigh(10));
+        System.out.println(seaPlane.flyHigh(15));
     }
 }
