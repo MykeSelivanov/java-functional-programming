@@ -9,3 +9,8 @@ public interface Moveable {
 interface Measurable{
     void measure();
 }
+
+@FunctionalInterface
+interface Computable{
+    void compute(int num1, int num2);
+}
