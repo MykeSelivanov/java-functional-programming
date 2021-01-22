@@ -30,7 +30,7 @@ public class LambdaIntroRunner {
         System.out.println(drone.flyHigh(10));
         System.out.println(drone.flyHigh(15));
 
-        Flyable seaPlane = mile -> mile<10 && mile%5==0;
+        Flyable seaPlane = mile -> mile>10 && mile%5==0;
         System.out.println(seaPlane.flyHigh(10));
         System.out.println(seaPlane.flyHigh(15));
     }
