@@ -3,6 +3,7 @@ package lambdasyntax;
 public class LambdaIntroRunner {
     public static void main(String[] args) {
 
+        // no parameters
         Measurable measurable1 = () -> System.out.println("measuring square");
         Measurable measurable2 = () -> System.out.println("measuring rectangle");
 
@@ -15,11 +16,14 @@ public class LambdaIntroRunner {
         measurable2.measure();
         measurable3.measure();
 
+        // multiple parameters
         Computable adder = (num1, num2) -> System.out.println("adding result " + (num1 + num2));
         Computable multiplier = (num1, num2) -> System.out.println("multiplying result " + (num1 * num2));
         Computable divider = (num1, num2) -> System.out.println("division result " + (num1 / num2));
 
         adder.compute(5,7);
+        multiplier.compute(2,3);
+        divider.compute(15,3);
 
     }
 }
