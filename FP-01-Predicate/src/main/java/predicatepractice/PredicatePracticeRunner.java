@@ -32,8 +32,6 @@ public class PredicatePracticeRunner {
         System.out.println(numbers);
 
 
-
-
     }
 
 }
