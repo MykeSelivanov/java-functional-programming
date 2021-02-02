@@ -8,6 +8,12 @@ import java.util.function.Predicate;
 public class PredicatePracticeRunner {
     public static void main(String[] args) {
 
+        /**
+         * Predicate - accepts a single argument and returns true or false
+         * Predicate<Integer> lesserThan = i -> i<10;
+         * System.out.println(lesserThan.test(5));
+         */
+
         // One way with implementing Predicate in separate MoreThan5CharChecker class which is redundancy
         Predicate<String> moreThan5Char = new MoreThan5CharChecker();
 
