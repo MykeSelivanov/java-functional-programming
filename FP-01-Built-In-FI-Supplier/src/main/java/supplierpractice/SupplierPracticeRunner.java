@@ -1,5 +1,7 @@
 package supplierpractice;
 
+import java.util.function.Supplier;
+
 public class SupplierPracticeRunner {
     public static void main(String[] args) {
 
@@ -9,7 +11,8 @@ public class SupplierPracticeRunner {
          * System.out.println(randomValue.get());
          */
 
-
+        Supplier<String> providedStr = () -> new String("Your String");
+        System.out.println(providedStr.get());
 
 
     }
