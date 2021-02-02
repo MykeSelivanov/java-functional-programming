@@ -7,6 +7,12 @@ import java.util.function.Consumer;
 public class ConsumerPracticeRunner {
     public static void main(String[] args) {
 
+        /**
+         * Consumer - takes single argument and does not return any value
+         * Consumer<Integer> display = a -> System.out.println(a);
+         * display.accept(10);
+         */
+
         // Implementing consumer in a separate class
         Consumer<String> doublePrinter = new StringDoublePrinter();
         doublePrinter.accept("Apple");
