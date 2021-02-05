@@ -16,12 +16,19 @@ public class UnaryOperatorPractice {
 
         UnaryOperator<Integer> operator = i -> i * 100;
 
-        List<Integer> newList = mapper(list, operator);
+        List<Integer> newList = mapper(nums, operator);
+
+        System.out.println(newList);
 
     }
 
     private static <T> List<T> mapper(List<T> list, UnaryOperator<T> operator){
-        List<T> list1 = new ArrayList<>();
+        List<T> newList = new ArrayList<>();
+        for (T t: list){
+            T element = operator.apply(t);
+            newList.add(element);
+        }
+        return newList;
     }
 
 }
