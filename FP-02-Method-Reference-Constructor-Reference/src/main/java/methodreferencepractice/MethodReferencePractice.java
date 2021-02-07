@@ -21,6 +21,7 @@ public class MethodReferencePractice {
          * Method reference to an instance method of an input object of a particular type
          *
          * 4 - Class :: new
+         * Method reference to a Constructor
          */
 
 
