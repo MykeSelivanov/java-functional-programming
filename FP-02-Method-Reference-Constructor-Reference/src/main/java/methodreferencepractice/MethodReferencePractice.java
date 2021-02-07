@@ -2,6 +2,7 @@ package methodreferencepractice;
 
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class MethodReferencePractice {
@@ -17,7 +18,7 @@ public class MethodReferencePractice {
          * Method reference to a static method of a class
          *
          * 3 - Class :: instanceMethod
-         *
+         * Method reference to an instance method of an input object of a particular type
          *
          * 4 - Class :: new
          */
@@ -39,6 +40,13 @@ public class MethodReferencePractice {
         BiFunction<String, String, String> biFunction = (a,b) -> A_Class.staticMethod(a, b);
         // Method reference way
         BiFunction<String, String, String> biFunction1 = A_Class :: staticMethod;
+
+        // Class :: instanceMethod
+        // Lambda way
+        Function<String, Integer> function = e -> e.length();
+        // Method reference way
+        Function<String, Integer> function1 = String :: length;
+
 
 
     }
