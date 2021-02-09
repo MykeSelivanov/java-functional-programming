@@ -11,6 +11,10 @@ public class OptionalCreation {
         // empty
         Optional<Integer> empty = Optional.empty();
 
+        // nullable
+        Optional<String> nullable = Optional.ofNullable(str);
+        Optional<String> emptyOptional = Optional.ofNullable(null); // if you're wrapping a null in an optional, you'll get an empty optional
+
     }
 
 }
