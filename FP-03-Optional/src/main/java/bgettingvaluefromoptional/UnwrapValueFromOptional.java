@@ -19,6 +19,13 @@ public class UnwrapValueFromOptional {
         Integer val = optional.isPresent() ? optional.get() : 0; // zero will become default value
         System.out.println(val);
 
+        // orElse, orElseGet
+        Integer orElse = optional.orElse(0);
+        System.out.println(orElse);
+
+        Integer orElseGet = emptyOptional.orElseGet(() -> 0); // if the optional is null, supply it with this default value
+        System.out.println(orElseGet);
+
     }
 
 }
