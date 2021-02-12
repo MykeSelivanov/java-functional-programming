@@ -26,6 +26,13 @@ public class UnwrapValueFromOptional {
         Integer orElseGet = emptyOptional.orElseGet(() -> 0); // if the optional is null, supply it with this default value
         System.out.println(orElseGet);
 
+        // orElseThrow(exceptionSupplier)
+        Integer orElseThrow = emptyOptional.orElseThrow(() -> new IllegalArgumentException("The value is not present"));
+        System.out.println(orElseThrow);
+
+        // orElseThrow() = get() since java10
+
+
     }
 
 }
