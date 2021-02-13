@@ -9,8 +9,8 @@ public class MapFilterFlatMap {
         Optional<String> emptyOptional = Optional.empty();
 
         // map() - modifies the value of optional
-        Optional<String> map = optional.map(val -> "Replaced");
-        System.out.println(map.get());
+        String map = optional.map(val -> "String").orElse("Empty");
+        System.out.println(map);
 
         Optional<String> mapOnEmpty = emptyOptional.map(val -> "New value");
 //        System.out.println(mapOnEmpty.get()); // will throw no such element exception
@@ -26,8 +26,9 @@ public class MapFilterFlatMap {
         Optional<String> filter1 = optional.filter(val -> val.equalsIgnoreCase("NOT VALUE"));
         System.out.println(filter1.orElse("Default"));
 
-
-
+        // flatMap()
+        Optional<String> flatMap = optional.flatMap(val -> Optional.of("Replaced"));
+        System.out.println(flatMap.get());
 
     }
 }
