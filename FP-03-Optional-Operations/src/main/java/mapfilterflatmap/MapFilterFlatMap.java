@@ -26,7 +26,7 @@ public class MapFilterFlatMap {
         Optional<String> filter1 = optional.filter(val -> val.equalsIgnoreCase("NOT VALUE"));
         System.out.println(filter1.orElse("Default"));
 
-        // flatMap()
+        // flatMap() - returns an optional
         Optional<String> flatMap = optional.flatMap(val -> Optional.of("Replaced"));
         System.out.println(flatMap.get());
 
