@@ -17,7 +17,10 @@ public class IfPresentStreamOrEqualsHashcode {
         // stream()
         // If a value is present, returns a sequential Stream containing only that value,
         // otherwise returns an empty Stream
-        optional.stream()
+        optional.stream().forEach(System.out :: println);
+        Optional.empty().stream().forEach(System.out :: println); // stream is empty and it doesn't print anything to console
+
+        // or()
 
     }
 
