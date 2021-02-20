@@ -10,8 +10,9 @@ public class HigherOrderFunctions {
          * or does both
          */
 
-
-
+        IFactory<Integer> createFactory = createFactory(() -> Math.random() * 100, random -> random.intValue());
+        Integer product = createFactory.create();
+        System.out.println(product);
 
     }
 
