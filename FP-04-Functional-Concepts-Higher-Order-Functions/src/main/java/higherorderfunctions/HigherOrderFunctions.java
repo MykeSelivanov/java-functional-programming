@@ -15,7 +15,7 @@ public class HigherOrderFunctions {
 
     }
 
-    public static <T> IFactory<T> createFactory(IProducer<T> producer, IConfigurator<T> configurator){
+    public static <T,R> IFactory<R> createFactory(IProducer<T> producer, IConfigurator<T,R> configurator){
         return () -> {
             T product = producer.produce();
             return configurator.configure(product);
