@@ -3,6 +3,8 @@ package generics;
 public class FunctionalGenericsRunner {
     public static void main(String[] args) {
 
+        // Generics <>
+
         FunctionalGenerics<String,String> functionalGenerics = str -> str.substring(1,5);
         System.out.println(functionalGenerics.execute("Hello Worlds"));
 
