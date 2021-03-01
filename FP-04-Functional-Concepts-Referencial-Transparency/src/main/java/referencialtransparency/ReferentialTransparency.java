@@ -28,6 +28,7 @@ public class ReferentialTransparency {
     // however not all referentially transparent functions are pure functions
 
     public static int multiply(int a, int b){
+
         return a * b;
     }
 
