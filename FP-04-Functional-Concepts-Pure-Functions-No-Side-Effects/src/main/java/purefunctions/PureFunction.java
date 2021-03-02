@@ -3,7 +3,7 @@ package purefunctions;
 public class PureFunction {
     public static void main(String[] args) {
 
-//        int result = add(multiply(2,3) , multiply(3,4));
+        //int result = add(multiply(2,3) , multiply(3,4));
         // substitution model says that you can replace any function call with it's return value
         int result = add(6, 12);
         System.out.println(result);
