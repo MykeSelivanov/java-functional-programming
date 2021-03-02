@@ -17,7 +17,6 @@ public class ReferentialTransparency {
         // you can substitute multiply(2,4) with multiply(2, multiply(2,2))
         System.out.println(result);
 
-
     }
 
     public static int add(int a, int b){
