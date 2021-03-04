@@ -1,5 +1,7 @@
 package functionchaining;
 
+import java.util.Objects;
+
 @FunctionalInterface
 public interface Consumer<T> {
 
@@ -7,6 +9,9 @@ public interface Consumer<T> {
 
     // since functional interfaces can have only one abstract method, andThen should be 'default' with implementation provided
     default Consumer<T> andThen(Consumer<T> next){
+        // making sure that null cannot be passed as an argument
+        Objects.requireNonNull(next);
+
       return   (T t) -> {
             // invokes accept() on itself
             this.accept(t);

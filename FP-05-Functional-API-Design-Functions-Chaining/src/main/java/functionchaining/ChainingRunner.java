@@ -1,5 +1,7 @@
 package functionchaining;
 
+import java.util.function.Function;
+
 public class ChainingRunner {
     public static void main(String[] args) {
 
@@ -27,6 +29,16 @@ public class ChainingRunner {
         Consumer<String> chainedConsumer = consumer1.andThen(consumer2);
         // accept call triggers the complete chain developed in default method in Consumer
         chainedConsumer.accept("This is chained");
+
+        // built in Function also has default andThen method, which accepts the output return from the first function
+        // and pass further to other function to operate on
+        Function<Integer, Integer> function1 = num -> num + 2;
+        Function<Integer, Integer> function2 = num -> num * 2;
+
+        // function1 will be executed first, and then function2 will be executed on the result returned by function1
+        Function<Integer, Integer> functionChaining = function1.andThen(function2);
+        // function1 -> 10 + 2 = 12 andThen function2 -> 12 * 2 = 24
+        System.out.println(functionChaining.apply(10));
 
 
     }
