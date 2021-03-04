@@ -9,4 +9,7 @@ public class ChainingRunner {
      * Basically chaining is a technique used to simplify code, when multiple functions are applied in a row
      */
 
+    Consumer<String> consumer = s -> System.out.println(s);
+    Consumer<String> consumer2 = s -> System.out.println(s);
+
 }
