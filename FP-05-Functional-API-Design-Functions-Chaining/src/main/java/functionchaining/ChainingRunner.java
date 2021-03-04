@@ -25,6 +25,8 @@ public class ChainingRunner {
 
         // Chaining functions
         Consumer<String> chainedConsumer = consumer1.andThen(consumer2);
+        // accept call triggers the complete chain developed in default method in Consumer
+        chainedConsumer.accept("This is chained");
 
 
     }
