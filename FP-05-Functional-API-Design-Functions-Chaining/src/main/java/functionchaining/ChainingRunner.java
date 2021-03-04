@@ -23,7 +23,8 @@ public class ChainingRunner {
         };
         consumer3.accept("Hello");
 
-        Consumer<String>
+        // Chaining functions
+        Consumer<String> chainedConsumer = consumer1.andThen(consumer2);
 
 
     }
