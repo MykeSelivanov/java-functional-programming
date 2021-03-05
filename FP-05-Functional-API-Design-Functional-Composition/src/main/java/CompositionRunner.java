@@ -10,6 +10,10 @@ public class CompositionRunner {
          */
 
         Function<Square, Integer> function1 = s -> s.getArea();
+        Function<Integer, Double> function2 = area -> Math.sqrt(area);
+
+        // default method in functional interface
+        function2.compose(function1);
 
 
     }
