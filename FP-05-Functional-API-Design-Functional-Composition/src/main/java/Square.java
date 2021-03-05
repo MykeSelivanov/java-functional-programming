@@ -6,6 +6,8 @@ public class Square {
         return area;
     }
 
-    public void setArea(int area)
+    public void setArea(int area){
+        this.area = area;
+    }
 
 }

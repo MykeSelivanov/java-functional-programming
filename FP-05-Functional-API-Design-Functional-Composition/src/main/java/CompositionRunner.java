@@ -9,7 +9,8 @@ public class CompositionRunner {
          * a.compose(b) : function b will get executed first and then function a will be executed on the result of b
          */
 
-        Function<Square, Integer>
+        Function<Square, Integer> function1 = s -> s.getArea();
+
 
     }
 
