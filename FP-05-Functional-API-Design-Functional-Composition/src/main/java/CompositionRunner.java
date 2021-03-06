@@ -19,7 +19,8 @@ public class CompositionRunner {
         // default method in functional interface
         Function<Square, Double> getSide = function2.compose(function1);
 
-        Double side = getSide.apply(square)
+        Double side = getSide.apply(square);
+        System.out.println(side);
 
     }
 
