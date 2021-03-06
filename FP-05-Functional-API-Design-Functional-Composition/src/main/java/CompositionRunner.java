@@ -13,13 +13,13 @@ public class CompositionRunner {
         Function<Integer, Double> function2 = area -> Math.sqrt(area);
 
         // to be used in composition func below
-        Square s = new Square();
-        s.setArea(100);
+        Square square = new Square();
+        square.setArea(100);
 
         // default method in functional interface
         Function<Square, Double> getSide = function2.compose(function1);
 
-        getSide.apply()
+        Double side = getSide.apply(square)
 
     }
 
