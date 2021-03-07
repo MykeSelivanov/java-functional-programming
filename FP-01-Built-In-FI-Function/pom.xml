@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>FP-01-Built-In-FI-Function</artifactId>
+    <artifactId>FP-01-Built-In-FI-composition.Function</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
