@@ -1,3 +1,5 @@
+package composition;
+
 public interface Function<T, R> {
 
     R apply(T t);

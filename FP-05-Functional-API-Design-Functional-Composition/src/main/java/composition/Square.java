@@ -1,3 +1,5 @@
+package composition;
+
 public class Square {
 
     private int area;

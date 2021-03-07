@@ -1,3 +1,5 @@
+package composition;
+
 public class CompositionRunner {
     public static void main(String[] args) {
 
