@@ -15,9 +15,16 @@ public class JavaClosure {
         int value = 123;
 
         Task lambda = () -> {
-            System.out.println();
+            System.out.println(value);
+            System.out.println("Task Completed");
         };
 
+        printValue(lambda);
+
+    }
+
+    private static void printValue(Task lambda){
+        lambda.doTask();
     }
 
 }
