@@ -1,6 +1,6 @@
 package closures;
 
-public class ClosuresPractice {
+public class JavaClosure {
     public static void main(String[] args) {
 
         /**
@@ -11,6 +11,12 @@ public class ClosuresPractice {
          * of code in which it is defined
          *                                                            Neil Gafter (pioneered introducing closures in java)
          */
+
+        int value = 123;
+
+        Task lambda = () -> {
+            System.out.println();
+        };
 
     }
 
