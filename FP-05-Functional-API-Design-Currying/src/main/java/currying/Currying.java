@@ -25,6 +25,12 @@ public class Currying {
         Integer sum2 = func1.apply(3).apply(4);
         System.out.println(sum2);
 
+        // more nested functions in return
+        Function <Integer, Function<Integer,Function<Integer, Integer>>> funcNested = val1 -> val2 -> val3 -> val1 + val2 + val3;
+        Integer sum3 = funcNested.apply(5).apply(6).apply(7);
+        System.out.println(sum3);
+
+
     }
 
 }
