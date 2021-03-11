@@ -5,7 +5,12 @@ public class TailCallOptimization {
 
         /**
          * Tail Call Optimization or Tail Call Recursion
-         * In case of regular recursion it keeps holding onto the stack because there are further operations
+         * In case of regular recursion it keeps holding on to the stack because there are further operations to be performed
+         * Large input will significantly impact performance
+         *
+         * Whereas in case of tail recursion there is an accumulator to store calculations product in it, which is not
+         * holding on to the stack
+         *
          */
 
     }
