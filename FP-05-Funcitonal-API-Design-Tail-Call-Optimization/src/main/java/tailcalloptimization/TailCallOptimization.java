@@ -7,9 +7,15 @@ public class TailCallOptimization {
          * Tail Call Optimization or Tail Call Recursion
          * In case of regular recursion it keeps holding on to the stack because there are further operations to be performed
          * Large input will significantly impact performance
+         * Compilers cannot convert regular recursive calls into iterations
          *
          * Whereas in case of tail recursion there is an accumulator to store calculations product in it, which is not
-         * holding on to the stack
+         * holding on to the stack for the operations, and that is why compiler can convert tail recursion into pure iterations
+         * This approach is called tail call optimization in compiler - it is preferable wherever possible to replace regular recursion
+         *
+         * Unfortunately java compiler does not support tail call optimization - it can't convert recursive calls into iterations
+         * Since recursion is used in functional programming a lot, it's a good approach to be careful when nesting them
+         * to avoid stack overflow
          *
          */
 
