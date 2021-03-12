@@ -5,7 +5,6 @@ import java.util.function.Function;
 public class ChainingRunner {
     public static void main(String[] args) {
 
-
         /**
          * Function chaining is a technic to chain functions
          * Each function returns an object, allowing the calls to be chained together in a single statement
@@ -39,7 +38,6 @@ public class ChainingRunner {
         Function<Integer, Integer> functionChaining = function1.andThen(function2);
         // function1 -> 10 + 2 = 12 andThen function2 -> 12 * 2 = 24
         System.out.println(functionChaining.apply(10));
-
 
     }
 }
