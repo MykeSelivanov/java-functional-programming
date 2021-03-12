@@ -33,8 +33,6 @@ public class LazyEvaluation {
         // we can create the instances just at the time we need them
         Person p1 = personSupplier.get();
 
-
-
     }
 
     static class Person{
