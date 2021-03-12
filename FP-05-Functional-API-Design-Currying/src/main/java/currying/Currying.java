@@ -30,7 +30,6 @@ public class Currying {
         Integer sum3 = funcNested.apply(5).apply(6).apply(7);
         System.out.println(sum3);
 
-
     }
 
 }
