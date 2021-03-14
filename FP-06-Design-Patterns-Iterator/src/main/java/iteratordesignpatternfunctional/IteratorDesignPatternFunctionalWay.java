@@ -11,7 +11,10 @@ public class IteratorDesignPatternFunctionalWay {
          * Examples:
          * java.util.Iterator
          * java.util.Enumeration
+         *
          */
+
+
 
     }
 
