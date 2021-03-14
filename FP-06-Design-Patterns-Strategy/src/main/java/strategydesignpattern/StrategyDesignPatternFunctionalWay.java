@@ -26,7 +26,19 @@ public class StrategyDesignPatternFunctionalWay {
         stockList.add(new Stock("AMZ",1866.74, 45));
         stockList.add(new Stock("GOOGL",990.0, 3));
         stockList.add(new Stock("AAPL",318.65, 8));
-        stockList.add(new Stock("APPL",1866.74, 9));
+        stockList.add(new Stock("APPL",318.65, 9));
+
+        // regular way
+        StockFilteringStrategy.bySymbol(stockList, "AMZ").forEach(System.out::println);
+        StockFilteringStrategy.byPriceAbove(stockList, 300.0).forEach(System.out::println);
+        System.out.println("------------------------------------------------------------------");
+
+        // functional way
+        // filter method takes List and Predicate to sort on
+        // public static List<Stock> filter(List<Stock> list, Predicate<Stock> predicate)
+        StockFilteringStrategy.filter(stockList, stock -> stock.getSymbol().equals("MSFT")).forEach(System.out::println);
+        StockFilteringStrategy.filter(stockList, stock -> stock.getUnits() <= 10).forEach(System.out::println);
+
 
 
 
