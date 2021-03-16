@@ -12,6 +12,16 @@ public class DecoratorPatternFunctionalWay {
          * Also each new functionality demands new class for itself
          */
 
+        // create one burger instance, then add veggies, and then add cheese on top
+        Burger order1 = new BurgerShop(burger -> burger.addCheese())
+                .use(new BurgerShop(burger -> burger.addVeggies())
+                        .use(new Burger()));
+
+        System.out.println("The order is : " + order1);
+
+
+
+
 
     }
 
