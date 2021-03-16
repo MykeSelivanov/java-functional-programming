@@ -19,10 +19,6 @@ public class DecoratorPatternFunctionalWay {
 
         System.out.println("The order is : " + order1);
 
-
-
-
-
     }
 
 }
