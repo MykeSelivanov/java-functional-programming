@@ -8,14 +8,24 @@ public class Order {
     private List<String> cart = new ArrayList<>();
     private String address = "";
 
-    public void add(String item){
-        cart.add(item);
-        System.out.println(item + " added to the cart");
+    public Order(){
     }
 
-    public void deliverAt(String location){
+    public Order(List<String> cart, String address) {
+        this.cart = cart;
+        this.address = address;
+    }
+
+    public Order add(String item){
+        cart.add(item);
+        System.out.println(item + " added to the cart");
+        return new Order(this.cart, this.address);
+    }
+
+    public Order deliverAt(String location){
         this.address = location;
         System.out.println("The delivery address set as: " + location);
+        return new Order(this.cart, this.address);
     }
 
     public void place(){
