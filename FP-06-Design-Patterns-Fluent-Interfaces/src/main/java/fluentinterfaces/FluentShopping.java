@@ -20,6 +20,13 @@ public class FluentShopping {
         // it will allow us to execute methods in a single chain
         // we will need to modify Order methods to return Order object again after applying some functionality
 
+        Order.place(order ->
+                order.add("T shirt")
+                     .add("Jeans")
+                     .deliverAt("1145 Main St"));
+
+
+
 
 
 

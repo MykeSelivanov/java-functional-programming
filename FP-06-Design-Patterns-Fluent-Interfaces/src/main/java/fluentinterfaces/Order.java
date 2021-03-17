@@ -2,6 +2,7 @@ package fluentinterfaces;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 
 public class Order {
 
@@ -28,9 +29,11 @@ public class Order {
         return new Order(this.cart, this.address);
     }
 
-    public void place(){
+    public static void place(Function<Order,Order> function){
+        Order order = new Order();
+        order = function.apply(order);
         System.out.println("Order placed!");
-        System.out.println(this.cart.size() + " items ordered will be delivered at " + this.address);
+        System.out.println(order.cart.size() + " items ordered will be delivered at " + order.address);
     }
 
 }
