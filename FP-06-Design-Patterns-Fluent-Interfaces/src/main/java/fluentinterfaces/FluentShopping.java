@@ -8,6 +8,19 @@ public class FluentShopping {
          * language. Using this pattern results in code that can be read nearly as human language.
          */
 
+        // Order class is kinda API to add and place orders
+        // regular approach which is not fluent
+//        Order myOrder1 = new Order();
+//        myOrder1.add("Shoes");
+//        myOrder1.add("Headphones");
+//        myOrder1.deliverAt("4517 Green street");
+//        myOrder1.place();
+
+        // We can use method chaining in order to improve the code
+        // it will allow us to execute methods in a single chain
+        // we will need to modify Order methods to return Order object again after applying some functionality
+
+
 
 
     }
