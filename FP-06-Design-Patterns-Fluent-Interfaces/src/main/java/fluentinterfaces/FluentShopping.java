@@ -25,10 +25,5 @@ public class FluentShopping {
                      .add("Jeans")
                      .deliverAt("1145 Main St"));
 
-
-
-
-
-
     }
 }
