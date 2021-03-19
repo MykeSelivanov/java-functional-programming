@@ -18,7 +18,10 @@ public class FactoryDesignPatternFunctionalWay {
          *
          */
 
-
+        // we don't know which object we're going to get and which implementation of the flooring will be provided
+        // It is decided by the factory according to the input parameters
+        Flooring floor = FlooringFactory.getFlooring(-1, 18);
+        floor.installation();
 
     }
 }
