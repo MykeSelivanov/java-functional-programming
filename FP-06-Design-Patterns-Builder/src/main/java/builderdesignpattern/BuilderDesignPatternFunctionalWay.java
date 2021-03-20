@@ -12,6 +12,9 @@ public class BuilderDesignPatternFunctionalWay {
          * Ex of builder in JDK are:
          * java.lang.StringBuilder
          * java.lang.StringBuffer
+         *
+         *StringBuilder sb = new StringBuilder();
+         * sb.append("Test"); - append() method returns the instance of itself, after adding values to it
          */
 
 
