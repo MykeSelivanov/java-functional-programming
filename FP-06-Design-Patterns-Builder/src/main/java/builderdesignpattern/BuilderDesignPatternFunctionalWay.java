@@ -6,6 +6,12 @@ public class BuilderDesignPatternFunctionalWay {
         /**
          * Builder Design pattern is all about providing flexibility in Object Creation. The intent of the builder
          * design pattern is to isolate the construction of a complex object from its representation.
+         *
+         * With builder pattern we also insure the immutability of the object after it's creation
+         *
+         * Ex of builder in JDK are:
+         * java.lang.StringBuilder
+         * java.lang.StringBuffer
          */
 
 
