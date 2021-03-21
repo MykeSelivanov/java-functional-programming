@@ -8,9 +8,10 @@ public class Mobile {
     final String processor;
     final double screenSize;
 
-    public Mobile(int ram, int storage, int battery, int camera, String processor, double screenSize) {
-        this.ram = ram;
-        this.storage = storage;
+    // MobileBuilder object will provide values for all the fields
+    public Mobile(MobileBuilder mobileBuilder) {
+        this.ram = mobileBuilder.ram;
+        this.storage = mobileBuilder.storage;
         this.battery = battery;
         this.camera = camera;
         this.processor = processor;
