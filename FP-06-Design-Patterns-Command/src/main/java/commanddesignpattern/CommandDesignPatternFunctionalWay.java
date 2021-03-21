@@ -15,6 +15,13 @@ public class CommandDesignPatternFunctionalWay {
          * perform corresponding operations
          */
 
+        AC ac1 = new AC();
+        AC ac2 = new AC();
+
+        ACAutomationRemote remote = new ACAutomationRemote();
+        remote.setCommand(() -> ac2.turnOn());
+        remote.buttonPressed();
+
     }
 
 }

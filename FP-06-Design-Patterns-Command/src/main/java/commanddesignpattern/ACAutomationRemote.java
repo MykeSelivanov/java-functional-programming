@@ -4,7 +4,7 @@ public class ACAutomationRemote {
 
     Command command;
 
-    public ACAutomationRemote(Command command) {
+    public void setCommand(Command command) {
         this.command = command;
     }
 
