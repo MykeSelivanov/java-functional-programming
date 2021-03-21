@@ -12,10 +12,10 @@ public class Mobile {
     public Mobile(MobileBuilder mobileBuilder) {
         this.ram = mobileBuilder.ram;
         this.storage = mobileBuilder.storage;
-        this.battery = battery;
-        this.camera = camera;
-        this.processor = processor;
-        this.screenSize = screenSize;
+        this.battery = mobileBuilder.battery;
+        this.camera = mobileBuilder.camera;
+        this.processor = mobileBuilder.processor;
+        this.screenSize = mobileBuilder.screenSize;
     }
 
     public int getRam() {
