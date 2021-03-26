@@ -5,6 +5,7 @@ public class StreamsReduceOperation {
 
         /**
          * Reducing is repeated process of combining all the elements
+         * T reduce(<T> identity, BinaryOperator op);
          */
 
 
