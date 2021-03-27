@@ -44,4 +44,5 @@ public class Book {
     public void setRating(double rating) {
         this.rating = rating;
     }
+
 }
