@@ -37,6 +37,7 @@ public class StreamsMapOperation {
                 .map(book -> book.getName())
                 .forEach(System.out::println);
 
+
     }
 
 }
