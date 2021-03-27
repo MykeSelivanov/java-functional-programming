@@ -19,6 +19,7 @@ public class StreamsFilterOperation {
                 .filter(integer -> integer%2 == 0)
                 .forEach(System.out::println);
 
+
     }
 
 }
