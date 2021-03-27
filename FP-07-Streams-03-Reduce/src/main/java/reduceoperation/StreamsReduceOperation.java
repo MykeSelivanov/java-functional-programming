@@ -25,6 +25,7 @@ public class StreamsReduceOperation {
                 // ((17,20) -> 17 + 20) = 37
         System.out.println(sum);
 
+
     }
 
 }
