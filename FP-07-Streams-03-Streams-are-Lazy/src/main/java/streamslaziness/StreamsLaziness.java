@@ -10,6 +10,11 @@ public class StreamsLaziness {
 
         /**
          * All the intermediate operations on Streams are lazy
+         * Stream pipeline gets triggered, only when a terminal operation is applied
+         * Terminal operation on a stream is eager - it will execute the complete pipeline right at the time, when it is applied
+         *
+         * Intermediate operations - lazy
+         * Terminal operations - eager
          */
 
         List<Book> books = new ArrayList<>();
