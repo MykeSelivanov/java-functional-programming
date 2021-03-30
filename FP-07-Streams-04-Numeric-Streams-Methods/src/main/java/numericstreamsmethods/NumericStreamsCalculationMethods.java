@@ -1,5 +1,7 @@
 package numericstreamsmethods;
 
+import java.util.IntSummaryStatistics;
+import java.util.OptionalDouble;
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
@@ -26,6 +28,15 @@ public class NumericStreamsCalculationMethods {
                 .min();
         System.out.println(minOptional.getAsInt());
 
+        // average() - also returns primitive optional, but it specifically returns OptionalDouble
+        OptionalDouble averageOptional = IntStream.of(3,4,5,6,7)
+                .average();
+        System.out.println(averageOptional.getAsDouble());
+
+        // summaryStatistics() - returns count, sum, min, average and max
+        IntSummaryStatistics intSummaryStatistics = IntStream.of(7,8,9,10)
+                .summaryStatistics();
+        System.out.println(intSummaryStatistics);
 
     }
 
