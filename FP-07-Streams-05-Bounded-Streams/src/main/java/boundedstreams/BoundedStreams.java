@@ -9,6 +9,10 @@ import java.util.stream.Stream;
 public class BoundedStreams {
     public static void main(String[] args) {
 
+        /**
+         * Some of the approaches to build finite or bounded streams
+         */
+
         List<Integer> list = List.of(1,4,7,9,4);
         Stream<Integer> streamIntegers = list.stream();
 
@@ -28,7 +32,16 @@ public class BoundedStreams {
         int [] ints = {7,8,9,10};
         IntStream streamOfPrimitiveInts = Arrays.stream(ints);
 
+        // using builder pattern - build Stream
+        Stream.Builder<Integer> builder = Stream.builder();
+        builder.add(1);
 
+        // some code (you can have some extra code)
+        // conditions (maybe some conditions to check if to add next element or not)
+        builder.add(4);
+
+        // finally, when you need a stream, you can invoke the build() method
+        Stream<Integer> integers = builder.build();
 
 
     }
