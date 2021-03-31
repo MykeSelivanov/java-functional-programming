@@ -38,6 +38,7 @@ public class NumericStreamsCalculationMethods {
                 .summaryStatistics();
         System.out.println(intSummaryStatistics);
 
+
     }
 
 }
