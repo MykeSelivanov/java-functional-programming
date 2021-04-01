@@ -1,5 +1,6 @@
 package infinitestreams;
 
+import java.util.Random;
 import java.util.stream.Stream;
 
 public class InfiniteStreams {
@@ -16,9 +17,20 @@ public class InfiniteStreams {
          *
          */
 
+        // iterate()
         Stream.iterate(0, i -> i-1)
+                .limit(5) // without limit intermediate operation we will get infinite stream
+                .forEach(System.out::println);
+
+        // generate(), this method is also available for all the primitive numeric streams
+        Stream.generate(() -> "Hello")
+                .limit(3)
+                .forEach(System.out::println);
+
+        Stream.generate(new Random() :: nextInt)
                 .limit(5)
                 .forEach(System.out::println);
+
 
     }
 
