@@ -15,7 +15,7 @@ public class FlatMapOperation {
         // in order to achieve that, we'll have to flatten the individual streams with flatMap() method
         // which takes a mapper (identity function)
         // identity function is a function that takes an element, and returns the same element
-        Stream.of(a,b)
+        Stream<String> flatMap = Stream.of(a, b)
                 .flatMap(stringStream -> stringStream);
 
 
