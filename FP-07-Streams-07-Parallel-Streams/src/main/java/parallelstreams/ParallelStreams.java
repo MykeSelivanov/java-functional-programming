@@ -3,7 +3,7 @@ package parallelstreams;
 public class ParallelStreams {
     public static void main(String[] args) {
         /**
-         *
+         * Main idea of using parallel streams is to improve the performance
          *
          * There are 2 ways of processing with streams:
          * Sequential - <collection>.stream() - streams are always sequential by default
