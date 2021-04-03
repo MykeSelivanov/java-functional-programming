@@ -27,6 +27,11 @@ public class ParallelStreams {
             employeeList.add(new Employee("Angela", 70000));
         }
 
+        long moreThan30KEmployees = employeeList.stream()
+                .filter(employee -> employee.getSalary() > 30000)
+                .count();
+        System.out.println(moreThan30KEmployees);
+
     }
 
 }
