@@ -1,5 +1,8 @@
 package parallelstreams;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ParallelStreams {
     public static void main(String[] args) {
         /**
@@ -12,6 +15,17 @@ public class ParallelStreams {
          *                                          - <stream>.parallel() - invoke a parallel() method on a regular sequential stream
          */
 
+        List<Employee> employeeList = new ArrayList<>();
+
+        // each iterations = 6 new Employees, after 100 iterations we will have 600 employees in the list
+        for (int i = 0; i < 100; i++){
+            employeeList.add(new Employee("John", 20000));
+            employeeList.add(new Employee("Ben", 30000));
+            employeeList.add(new Employee("Patrick", 40000));
+            employeeList.add(new Employee("Sara", 50000));
+            employeeList.add(new Employee("Gabi", 60000));
+            employeeList.add(new Employee("Angela", 70000));
+        }
 
     }
 
