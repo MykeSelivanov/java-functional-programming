@@ -4,6 +4,11 @@ public class Employee {
     private String name;
     private int salary;
 
+    public Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+
     public String getName() {
         return name;
     }
@@ -19,4 +24,5 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
 }
