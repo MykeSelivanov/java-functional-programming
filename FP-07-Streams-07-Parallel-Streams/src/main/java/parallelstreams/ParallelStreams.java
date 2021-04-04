@@ -18,7 +18,7 @@ public class ParallelStreams {
         List<Employee> employeeList = new ArrayList<>();
 
         // each iterations = 6 new Employees, after 100 iterations we will have 600 employees in the list
-        for (int i = 0; i < 100; i++){
+        for (int i = 0; i < 10000000; i++){
             employeeList.add(new Employee("John", 20000));
             employeeList.add(new Employee("Ben", 30000));
             employeeList.add(new Employee("Patrick", 40000));
@@ -27,10 +27,25 @@ public class ParallelStreams {
             employeeList.add(new Employee("Angela", 70000));
         }
 
-        long moreThan30KEmployees = employeeList.stream()
+        // execute sequentially and measure time needed for this operation
+        long startTime = System.currentTimeMillis();
+        System.out.println("Sequential stream: " + employeeList.stream()
                 .filter(employee -> employee.getSalary() > 30000)
-                .count();
-        System.out.println(moreThan30KEmployees);
+                .count());
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
+        System.out.println( "Sequential Duration: " + duration);
+
+        // execute parallel stream and measure time take to execute
+        startTime = System.currentTimeMillis();
+        System.out.println("Parallel stream: " + employeeList.parallelStream()
+                .filter(employee -> employee.getSalary() > 30000)
+                .count());
+        endTime = System.currentTimeMillis();
+        duration = endTime - startTime;
+        System.out.println( "Parallel Duration: " + duration);
+
+
 
     }
 
