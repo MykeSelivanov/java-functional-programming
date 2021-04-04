@@ -13,6 +13,18 @@ public class ParallelStreams {
          * Parallel - to create a parallel Stream:
          *                                          - <collection>.parallelStream() method or
          *                                          - <stream>.parallel() - invoke a parallel() method on a regular sequential stream
+         *
+         * Keep in mind, that going parallel is expensive, parallelism comes with some implications like outcome after
+         * the processing should be same as sequential processing
+         *
+         * While applying parallel operations on some data, you need to keep in mind that the stream should be:
+         * - stateless
+         * - non-interfering (data-source should not get affected during the stream operations)
+         * - associative (one operation result should not get affected by the order of data under processing)
+         *
+         * Also keep in mind, that parallel execution has more complexity than the sequential execution, so
+         * in reality sometimes parallelism will speed up the computation, sometimes it will not, and sometimes it
+         * will even slow it down
          */
 
         List<Employee> employeeList = new ArrayList<>();
@@ -44,6 +56,13 @@ public class ParallelStreams {
         endTime = System.currentTimeMillis();
         duration = endTime - startTime;
         System.out.println( "Parallel Duration: " + duration);
+
+        /**
+         * Result of the above example will depend on the amount of data that is processed in stream
+         * when you have your loop that creates data - i < 10000000, starting from this point parallel stream will
+         * outperform sequential one (keep in mind it depends on your machine hardware)
+         * I cases below 10000000 sequential stream outperforms parallel (again, this is the case for my machine)
+         */
 
 
 
