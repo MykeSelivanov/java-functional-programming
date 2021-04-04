@@ -18,7 +18,7 @@ public class ParallelStreams {
          * the processing should be same as sequential processing
          *
          * While applying parallel operations on some data, you need to keep in mind that the stream should be:
-         * - stateless
+         * - stateless (check the java doc for each intermediate stream operation you're using, it should say is is stateless or stateful method)
          * - non-interfering (data-source should not get affected during the stream operations)
          * - associative (one operation result should not get affected by the order of data under processing)
          *
