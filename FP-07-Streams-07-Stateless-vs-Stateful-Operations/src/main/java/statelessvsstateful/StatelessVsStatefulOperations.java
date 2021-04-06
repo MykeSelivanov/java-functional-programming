@@ -28,7 +28,6 @@ public class StatelessVsStatefulOperations {
                 .limit(5)
                 .collect(Collectors.toList());
 
-
     }
 
 }
