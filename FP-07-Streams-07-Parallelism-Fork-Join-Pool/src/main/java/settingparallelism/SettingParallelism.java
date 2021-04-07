@@ -32,8 +32,11 @@ public class SettingParallelism {
         /**
          * How to decide on the number of threads needed?
          *
-         * For Computational intensive jobs or cpu bound (a lot of calculations or logic to perform) - Number of threads <= number of processor cores
+         * For Computational intensive jobs or CPU bound (a lot of calculations or logic to perform) - Number of threads <= number of processor cores
+         *
          * For I/O intensive jobs or I/O bound jobs (file operation, database operation, http call) - Number of threads can be > number of cores
+         * If the application is I/O intensive, then application is sleeping half of the time, so to leverage the CPU, you can create more threads
+         * Creating more threads at a time usually helps, but after some point they start causing performance degradation
          */
 
         List<Employee> employeeList = new ArrayList<>();
