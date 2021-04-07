@@ -1,5 +1,7 @@
 package settingparallelism;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ForkJoinPool;
 
 public class SettingParallelism {
@@ -24,7 +26,17 @@ public class SettingParallelism {
         // If you don't want to use common ForkJoinPool, you can create your own
         ForkJoinPool pool = new ForkJoinPool(2); // parameter limits the number of threads used by this instance of ForkJoinPool
 
+        List<Employee> employeeList = new ArrayList<>();
 
+        // each iterations = 6 new Employees, after 100 iterations we will have 600 employees in the list
+        for (int i = 0; i < 10000000; i++){
+            employeeList.add(new Employee("John", 20000));
+            employeeList.add(new Employee("Ben", 30000));
+            employeeList.add(new Employee("Patrick", 40000));
+            employeeList.add(new Employee("Sara", 50000));
+            employeeList.add(new Employee("Gabi", 60000));
+            employeeList.add(new Employee("Angela", 70000));
+        }
 
     }
 }
