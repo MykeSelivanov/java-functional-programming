@@ -25,7 +25,16 @@ public class SettingParallelism {
         System.out.println(ForkJoinPool.getCommonPoolParallelism());
 
         // If you don't want to use common ForkJoinPool, you can create your own
-        ForkJoinPool pool = new ForkJoinPool(2); // parameter limits the number of threads used by this instance of ForkJoinPool
+        // parameter limits the number of threads used by this instance of ForkJoinPool
+        // you can also have the number of threads greater than number of processors, but keep in mind that can cost some performance overhead
+        ForkJoinPool pool = new ForkJoinPool(2);
+
+        /**
+         * How to decide on the number of threads needed?
+         *
+         * For Computational intensive jobs or cpu bound (a lot of calculations or logic to perform) - Number of threads <= number of processor cores
+         * For I/O intensive jobs or I/O bound jobs (file operation, database operation, http call) - Number of threads can be > number of cores
+         */
 
         List<Employee> employeeList = new ArrayList<>();
         for (int i = 0; i < 10000000; i++){
@@ -48,7 +57,6 @@ public class SettingParallelism {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-
         System.out.println(count);
 
     }
