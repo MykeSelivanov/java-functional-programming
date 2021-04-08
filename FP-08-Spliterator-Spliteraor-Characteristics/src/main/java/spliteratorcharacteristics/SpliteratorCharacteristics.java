@@ -8,6 +8,7 @@ public class SpliteratorCharacteristics {
          * Spliterator is also used for other sources, like collections
          * Behind the scenes collections already have their own implementations of Spliterator, which used, when stream is created
          * But custom source requires custom implementation
+         *
          */
 
     }
