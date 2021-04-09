@@ -9,7 +9,11 @@ public class SpliteratorCharacteristics {
          * Behind the scenes collections already have their own implementations of Spliterator, which used, when stream is created
          * But custom source requires custom implementation
          *
+         * Spliterator characteristics are used to define the state of the stream
+         * int characteristics() method returns the set of characteristics of the spliterator and its elements
          */
+
+
 
     }
 
