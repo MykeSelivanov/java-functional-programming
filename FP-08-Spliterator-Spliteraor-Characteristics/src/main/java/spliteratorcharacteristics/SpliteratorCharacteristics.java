@@ -29,7 +29,18 @@ public class SpliteratorCharacteristics {
          *  int characteristics() { return Spliterator.ORDERED | Spliterator.DISTINCT |
          *                          Spliterator.SORTED | Spliterator.SIZED | Spliterator.SUBSIZED; }
          *
-         *  method
+         *  method returns a set of characteristics of the spliterator and it's elements and the result is represented as
+         *  ORed values of all the characteristics that are set for the spliterator
+         *
+         *  ORDERED - means that for the stream generated on this spliterator, order matters, for eg stream from Arraylist
+         *  DISTINCT - says that there is no duplications in this spliterator, for eg stream from Set
+         *  SORTED - means that stream is sorted, for eg if stream was created from SortedSet
+         *  SIZED - says that size of the spliterator is known
+         *  NONNULL - means that there can't be any null values present in the stream
+         *  IMMUTABLE - stream is immutable
+         *  CONCURRENT - means that stream is built on a concurrent structure, for eg Concurrent Hash Map
+         *  SUBSIZED - means that the size is known, but it signifies that all the spliterators that are resulting from the
+         *  trySplit() method will be sized, when stream would go parallel
          *
          */
 
