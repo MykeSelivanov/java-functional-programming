@@ -1,7 +1,7 @@
 package spliteratorcharacteristics;
 
-import java.util.Spliterator;
-import java.util.Spliterators;
+import java.util.*;
+import java.util.stream.Stream;
 
 public class SpliteratorCharacteristics {
     public static void main(String[] args) {
@@ -41,9 +41,19 @@ public class SpliteratorCharacteristics {
          *  CONCURRENT - means that stream is built on a concurrent structure, for eg Concurrent Hash Map
          *  SUBSIZED - means that the size is known, but it signifies that all the spliterators that are resulting from the
          *  trySplit() method will be sized, when stream would go parallel
-         *
          */
 
+        // How to check spliterator characteristics for ArrayList
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9));
+
+        Stream<Integer> stream = list.stream();
+        Spliterator<Integer> spliterator = stream.spliterator();
+        int characteristics = spliterator.characteristics();
+        System.out.println(Integer.bitCount(characteristics));
+
+        // how to check if spliterator characteristics properties are set or not
+        boolean bool = spliterator.hasCharacteristics(0x00000010);
+        System.out.println(bool);
 
     }
 
