@@ -25,7 +25,6 @@ public class SpliteratorCharacteristics {
          *  public static final int SUBSIZED = 0x00004000;
          */
 
-        Spliterator<String> stringSpliterator = new Spliterator();
 
     }
 
