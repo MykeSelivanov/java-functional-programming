@@ -55,6 +55,22 @@ public class SpliteratorCharacteristics {
         boolean bool = spliterator.hasCharacteristics(0x00000010);
         System.out.println(bool);
 
+        // How Spliterator characteristics can help in performance optimization
+        SortedSet<Integer> set = new TreeSet<>();
+
+        set.stream()
+                // since the sorted set is already sorted, this means the SORTED characteristic is already set and sorted()
+                // intermediate operation will be ignored, helping to improve performance
+                .sorted()
+                .forEach(System.out::println);
+
+        /**
+         * Keep in mind that the operations on stream can also modify the stream characteristics,
+         * for eg in example above if it was an unsorted set, intermediate sorted operation would set the SORTED characteristic on that stream
+         *
+         * Operations on a stream may inject a characteristic, may preserve or may clear a characteristic, and it will affect the stream pipeline execution
+         */
+
     }
 
 }
