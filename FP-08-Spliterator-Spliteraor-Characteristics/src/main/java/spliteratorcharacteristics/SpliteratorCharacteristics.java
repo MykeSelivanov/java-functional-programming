@@ -16,6 +16,7 @@ public class SpliteratorCharacteristics {
          * int characteristics() method returns the set of characteristics of the spliterator and its elements
          *
          * Constants below are actual spliterator characteristics from the Spliterator interface
+         * These characteristics are used to define the state of a stream
          *  public static final int ORDERED    = 0x00000010; - value is a binary representation of a plain integer
          *  public static final int DISTINCT   = 0x00000001;
          *  public static final int SORTED     = 0x00000004;
@@ -24,6 +25,11 @@ public class SpliteratorCharacteristics {
          *  public static final int IMMUTABLE  = 0x00000400;
          *  public static final int CONCURRENT = 0x00001000;
          *  public static final int SUBSIZED = 0x00004000;
+         *
+         *  int characteristics() { return Spliterator.ORDERED | Spliterator.DISTINCT |
+         *                          Spliterator.SORTED | Spliterator.SIZED | Spliterator.SUBSIZED; }
+         *
+         *  method
          *
          */
 
