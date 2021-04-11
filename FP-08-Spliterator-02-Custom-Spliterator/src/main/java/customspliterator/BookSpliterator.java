@@ -17,15 +17,23 @@ public class BookSpliterator implements Spliterator<Book> {
 
     @Override
     public boolean tryAdvance(Consumer<? super Book> action) {
-        this.baseSpliterator.tryAdvance(name -> this.name = name);
-        this.baseSpliterator.tryAdvance(name -> this.name = name);
-        this.baseSpliterator.tryAdvance(name -> this.name = name);
-        this.baseSpliterator.tryAdvance(name -> this.name = name);
+        // call the baseSpliterator which is reading file with data line by line
+        if (
+        this.baseSpliterator.tryAdvance(name -> this.name = name) &&
+        this.baseSpliterator.tryAdvance(author -> this.author = author) &&
+        this.baseSpliterator.tryAdvance(genre -> this.genre = genre) &&
+        this.baseSpliterator.tryAdvance(rating -> this.rating = Double.valueOf(rating))
+        ) {
+            // if we're able to read all the data from baseSpliterator, than we can create new Book object
+            action.accept(new Book(this.name, this.author, this.genre, this.rating));
+            return true;
+        }
         return false;
     }
 
     @Override
     public Spliterator<Book> trySplit() {
+        // there is no need to implement this one, unless you want to be able to run in parallel
         return null;
     }
 
