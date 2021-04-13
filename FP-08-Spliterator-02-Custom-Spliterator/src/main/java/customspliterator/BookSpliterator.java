@@ -39,12 +39,17 @@ public class BookSpliterator implements Spliterator<Book> {
 
     @Override
     public long estimateSize() {
-        return 0;
+        // estimate size - is the size of the stream that is going to be created
+        // in this example, base spliterator reads line by line = 24 lines, but in order to get one book = 4 lines
+        // which means base spliterator seize divided by 4
+        return baseSpliterator.estimateSize() / 4;
     }
 
     @Override
     public int characteristics() {
-        return 0;
+        // since for this example no plans to change the stream characteristics, you can simply return the ones, that will
+        // come form baseSpliterator
+        return baseSpliterator.characteristics();
     }
 
 
