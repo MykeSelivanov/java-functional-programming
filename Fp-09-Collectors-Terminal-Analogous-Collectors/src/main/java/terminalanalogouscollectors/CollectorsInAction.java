@@ -7,6 +7,7 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Spliterator;
 import java.util.stream.Stream;
+import java.util.stream.StreamSupport;
 
 public class CollectorsInAction {
     public static void main(String[] args) {
@@ -23,6 +24,10 @@ public class CollectorsInAction {
 
             // creating a custom spliterator, that will read Employee objects based on base words spliterator
             Spliterator<Employee> employeeSpliterator = new EmployeeSpliterator(wordsSpliterator);
+
+            // Creating stream from StreamSupport class and passing custom spliterator created above
+            Stream<Employee> employees = StreamSupport.stream(employeeSpliterator, false);
+            employees.forEach(System.out::println);
 
         } catch (IOException e) {
             e.printStackTrace();
