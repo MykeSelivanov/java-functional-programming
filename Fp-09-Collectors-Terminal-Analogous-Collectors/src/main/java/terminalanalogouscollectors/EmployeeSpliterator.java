@@ -1,6 +1,6 @@
 package terminalanalogouscollectors;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.Spliterator;
 import java.util.function.Consumer;
 
@@ -22,6 +22,28 @@ public class EmployeeSpliterator implements Spliterator<Employee> {
 
     @Override
     public boolean tryAdvance(Consumer<? super Employee> action) {
+        if (
+                this.wordSpliterator.tryAdvance(word -> this.id = Integer.valueOf(word))
+                && this.wordSpliterator.tryAdvance(word -> this.name = word)
+                && this.wordSpliterator.tryAdvance(word -> this.gender = word.charAt(0))
+                && this.wordSpliterator.tryAdvance(word -> this.dob = Date.valueOf(word))
+                && this.wordSpliterator.tryAdvance(word -> this.city = word)
+                && this.wordSpliterator.tryAdvance(word -> this.designation = word)
+                && this.wordSpliterator.tryAdvance(word -> this.joiningDate = Date.valueOf(word))
+                && this.wordSpliterator.tryAdvance(word -> this.salary = Double.valueOf(word))
+        ) {
+            action.accept(new Employee(
+                    this.id,
+                    this.name,
+                    this.gender,
+                    this.dob,
+                    this.city,
+                    this.designation,
+                    this.joiningDate,
+                    this.salary
+            ));
+            return true;
+        }
         return false;
     }
 
