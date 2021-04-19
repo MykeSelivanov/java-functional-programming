@@ -54,11 +54,12 @@ public class EmployeeSpliterator implements Spliterator<Employee> {
 
     @Override
     public long estimateSize() {
-        return 0;
+        // each line in the EmployeeData document has 8 words therefore
+        return wordSpliterator.estimateSize() / 8;
     }
 
     @Override
     public int characteristics() {
-        return 0;
+        return wordSpliterator.characteristics();
     }
 }
