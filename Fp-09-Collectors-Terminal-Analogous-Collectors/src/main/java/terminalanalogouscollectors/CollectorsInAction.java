@@ -31,11 +31,19 @@ public class CollectorsInAction {
             Stream<Employee> employees = StreamSupport.stream(employeeSpliterator, false);
 //            employees.forEach(System.out::println);
 
+            // Since employees stream will be consumed after couple operations, it's a good idea to store the data from this stream
+            // in a List, which you can easily then convert to stream to process the data
+            List<Employee> employeesList = employees.collect(Collectors.toList());
+
             // Getting list of all the employee names into an immutable(unmodifiable List)
-            List<String> employeeNames = employees
+            List<String> employeeNames = employeesList.stream()
                     .map(employee -> employee.getName())
                     .collect(Collectors.toUnmodifiableList());
             System.out.println(employeeNames);
+
+
+
+
 
 
         } catch (IOException e) {
