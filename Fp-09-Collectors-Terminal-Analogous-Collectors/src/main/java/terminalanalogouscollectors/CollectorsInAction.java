@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -41,9 +42,12 @@ public class CollectorsInAction {
                     .collect(Collectors.toUnmodifiableList());
             System.out.println(employeeNames);
 
-
-
-
+            // Collect all the employee designations from the data file, and make sure you're not collecting duplicates,
+            // since multiple employee can have same designation, thus - use Set
+            Set<String> employeeDesignation = employeesList.stream()
+                    .map(employee -> employee.getDesignation())
+                    .collect(Collectors.toUnmodifiableSet());
+            System.out.println(employeeDesignation);
 
 
         } catch (IOException e) {
