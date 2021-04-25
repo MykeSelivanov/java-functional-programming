@@ -5,7 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Spliterator;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -27,7 +29,14 @@ public class CollectorsInAction {
 
             // Creating stream from StreamSupport class and passing custom spliterator created above
             Stream<Employee> employees = StreamSupport.stream(employeeSpliterator, false);
-            employees.forEach(System.out::println);
+//            employees.forEach(System.out::println);
+
+            // Getting list of all the employee names into an immutable(unmodifiable List)
+            List<String> employeeNames = employees
+                    .map(employee -> employee.getName())
+                    .collect(Collectors.toUnmodifiableList());
+            System.out.println(employeeNames);
+
 
         } catch (IOException e) {
             e.printStackTrace();
