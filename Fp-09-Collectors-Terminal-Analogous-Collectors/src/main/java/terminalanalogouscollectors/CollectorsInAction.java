@@ -40,15 +40,16 @@ public class CollectorsInAction {
             List<String> employeeNames = employeesList.stream()
                     .map(employee -> employee.getName())
                     .collect(Collectors.toUnmodifiableList());
-            System.out.println(employeeNames);
 
             // Collect all the employee designations from the data file, and make sure you're not collecting duplicates,
             // since multiple employee can have same designation, thus - use Set
             Set<String> employeeDesignation = employeesList.stream()
                     .map(employee -> employee.getDesignation())
                     .collect(Collectors.toUnmodifiableSet());
-            System.out.println(employeeDesignation);
 
+            // after collecting employee names and designations, we can print them, to make sure correct data was collected
+            System.out.println(employeeNames);
+            System.out.println(employeeDesignation);
 
         } catch (IOException e) {
             e.printStackTrace();
