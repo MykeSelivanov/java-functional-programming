@@ -4,10 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
-import java.util.Spliterator;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -28,6 +25,13 @@ public class CollectorsInAction2 {
             Stream<Employee> employees = StreamSupport.stream(employeeSpliterator, false);
             List<Employee> employeesList = employees.collect(Collectors.toList());
 
+            System.out.println("---------------Collection(TreeSet)---------------");
+            // let's say you want to have all employees in a structure, where employees are sorted based on their employee ID
+            // Collectors.toCollection takes a collection supplier in order to build desired collection with collectionFactory
+            // when you use a treeSet to store employees sorted, you also need to provide employee comparator in Employee class
+            TreeSet<Employee> employeesSortedOnID = employeesList.stream()
+                    .collect(Collectors.toCollection(() -> new TreeSet<>()));
+            System.out.println(employeesSortedOnID);
 
 
         } catch (IOException e) {

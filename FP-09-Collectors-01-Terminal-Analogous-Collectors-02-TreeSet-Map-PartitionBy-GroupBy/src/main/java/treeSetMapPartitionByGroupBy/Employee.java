@@ -9,7 +9,7 @@ import java.sql.Date;
 @Getter
 @Setter
 @ToString
-public class Employee {
+public class Employee implements Comparable<Employee> {
 
     private int id;
     private String name;
@@ -31,4 +31,15 @@ public class Employee {
         this.salary = salary;
     }
 
+    // implementing Employee comparator based on Employee ID
+    @Override
+    public int compareTo(Employee o) {
+        if (this.id < o.id) {
+            return -1;
+        } else if (this.id > o.id) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
 }
