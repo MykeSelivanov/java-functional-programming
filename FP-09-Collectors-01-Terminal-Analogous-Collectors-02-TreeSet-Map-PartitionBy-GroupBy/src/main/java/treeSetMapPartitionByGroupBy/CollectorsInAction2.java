@@ -33,6 +33,14 @@ public class CollectorsInAction2 {
                     .collect(Collectors.toCollection(() -> new TreeSet<>()));
             System.out.println(employeesSortedOnID);
 
+            System.out.println("---------------Collection(TreeSet)---------------");
+            // store the employee data from stream to a map, with employee ID as a key and employee name as a respective value
+            Map<Integer, String> getEmployeeNameByID = employeesList.stream()
+                    .collect(
+                            // instead of toMap you can also use toUnmodifiableMap if you want to create immutable Map with values
+                            Collectors.toMap(employee -> employee.getId(), employee -> employee.getName()) // first - keyMapper, second argument - valueMapper
+                    );
+            System.out.println(getEmployeeNameByID);
 
         } catch (IOException e) {
             e.printStackTrace();
