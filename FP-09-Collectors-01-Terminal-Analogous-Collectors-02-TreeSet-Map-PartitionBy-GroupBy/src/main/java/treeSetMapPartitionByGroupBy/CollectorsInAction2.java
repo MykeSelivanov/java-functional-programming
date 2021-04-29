@@ -33,7 +33,7 @@ public class CollectorsInAction2 {
                     .collect(Collectors.toCollection(() -> new TreeSet<>()));
             System.out.println(employeesSortedOnID);
 
-            System.out.println("---------------Collection(TreeSet)---------------");
+            System.out.println("---------------Collection(Map)---------------");
             // store the employee data from stream to a map, with employee ID as a key and employee name as a respective value
             Map<Integer, String> getEmployeeNameByID = employeesList.stream()
                     .collect(
@@ -41,6 +41,8 @@ public class CollectorsInAction2 {
                             Collectors.toMap(employee -> employee.getId(), employee -> employee.getName()) // first - keyMapper, second argument - valueMapper
                     );
             System.out.println(getEmployeeNameByID);
+
+            System.out.println("---------------Collectors.partitioningBy(predicate)---------------");
 
         } catch (IOException e) {
             e.printStackTrace();
