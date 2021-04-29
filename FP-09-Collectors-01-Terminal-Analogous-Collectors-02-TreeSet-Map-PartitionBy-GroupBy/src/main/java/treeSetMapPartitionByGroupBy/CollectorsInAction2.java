@@ -43,6 +43,11 @@ public class CollectorsInAction2 {
             System.out.println(getEmployeeNameByID);
 
             System.out.println("---------------Collectors.partitioningBy(predicate)---------------");
+            // collect all employees, gender == M
+            Map<Boolean, List<Employee>> maleEmployees = employeesList.stream()
+                    .collect(
+                            Collectors.partitioningBy(employee -> employee.getGender() == = 'M')
+                    );
 
         } catch (IOException e) {
             e.printStackTrace();
