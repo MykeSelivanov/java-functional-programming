@@ -51,6 +51,13 @@ public class CollectorsInAction2 {
                             Collectors.partitioningBy(employee -> employee.getGender() == 'M')
                     );
             System.out.println(entriesWithMaleAndFemaleEmployees);
+            // List of male employees
+            List<Employee> maleEmployee = entriesWithMaleAndFemaleEmployees.get(true);
+            // List of female employee
+            List<Employee> femaleEmployee = entriesWithMaleAndFemaleEmployees.get(false);
+
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
