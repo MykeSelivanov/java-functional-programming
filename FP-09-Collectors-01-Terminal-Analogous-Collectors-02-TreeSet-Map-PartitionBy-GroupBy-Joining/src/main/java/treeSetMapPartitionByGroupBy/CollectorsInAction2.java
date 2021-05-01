@@ -12,7 +12,7 @@ import java.util.stream.StreamSupport;
 public class CollectorsInAction2 {
     public static void main(String[] args) {
 
-        Path path = Paths.get("/Users/mykhailoselivanov/Documents/java-projects/java-functional-programming/FP-09-Collectors-01-Terminal-Analogous-Collectors-02-TreeSet-Map-PartitionBy-GroupBy/src/main/java/treeSetMapPartitionByGroupBy/EmployeeData");
+        Path path = Paths.get("/Users/mykhailoselivanov/Documents/java-projects/java-functional-programming/FP-09-Collectors-01-Terminal-Analogous-Collectors-02-TreeSet-Map-PartitionBy-GroupBy-Joining/src/main/java/treeSetMapPartitionByGroupBy/EmployeeData");
         try (Stream<String> lines = Files.lines(path)) {
             // 1. reading document with employee data line by line
             // 2. splitting lines on "," to get words
@@ -61,8 +61,12 @@ public class CollectorsInAction2 {
                     .collect(Collectors.groupingBy(employee -> employee.getDesignation()));
             System.out.println(getByDesignation);
 
-
-
+            System.out.println("---------------Collectors.joining(delimiter)---------------");
+            // You can store all the data into single string separated by a provided delimiter
+            String employeeNamesStr = employeesList.stream()
+                    .map(employee -> employee.getName())
+                    .collect(Collectors.joining(", "));
+            System.out.println(employeeNamesStr);
 
         } catch (IOException e) {
             e.printStackTrace();
