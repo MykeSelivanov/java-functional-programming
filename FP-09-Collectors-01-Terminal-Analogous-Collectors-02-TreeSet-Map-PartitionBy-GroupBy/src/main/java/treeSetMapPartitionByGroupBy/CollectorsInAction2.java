@@ -56,7 +56,10 @@ public class CollectorsInAction2 {
             // List of female employee
             List<Employee> femaleEmployee = entriesWithMaleAndFemaleEmployees.get(false);
 
-
+            System.out.println("---------------Collectors.groupingBy(function)---------------");
+            Map<String, List<Employee>> getByDesignation = employeesList.stream()
+                    .collect(Collectors.groupingBy(employee -> employee.getDesignation()));
+            System.out.println(getByDesignation);
 
 
         } catch (IOException e) {
