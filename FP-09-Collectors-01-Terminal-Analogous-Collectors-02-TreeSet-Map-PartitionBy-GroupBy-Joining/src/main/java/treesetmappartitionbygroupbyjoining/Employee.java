@@ -1,4 +1,4 @@
-package treeSetMapPartitionByGroupBy;
+package treesetmappartitionbygroupbyjoining;
 
 import lombok.Getter;
 import lombok.Setter;

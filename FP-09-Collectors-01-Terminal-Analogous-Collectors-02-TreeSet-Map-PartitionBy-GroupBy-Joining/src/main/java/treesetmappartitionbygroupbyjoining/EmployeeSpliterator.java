@@ -1,4 +1,4 @@
-package treeSetMapPartitionByGroupBy;
+package treesetmappartitionbygroupbyjoining;
 
 import java.sql.Date;
 import java.util.Spliterator;
