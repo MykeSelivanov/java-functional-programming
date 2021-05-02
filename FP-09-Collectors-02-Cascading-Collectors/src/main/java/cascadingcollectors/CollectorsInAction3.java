@@ -26,8 +26,13 @@ public class CollectorsInAction3 {
             List<Employee> employeesList = StreamSupport.stream(employeeSpliterator, false)
                                             .collect(Collectors.toList());
 
-            Map<String, List<Employee>> getByDesignation = employeesList.stream()
-                    .collect(Collectors.groupingBy(employee -> employee.getDesignation()));
+            // grouping by employees by their designation and then counting how many employees you have for each designation
+            Map<String, Long> countByDesignation = employeesList.stream()
+                    .collect(
+                            Collectors.groupingBy(
+                                    employee -> employee.getDesignation(),
+                                    Collectors.counting()));
+            System.out.println(countByDesignation);
 
 
         } catch (IOException e) {
