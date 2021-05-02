@@ -36,9 +36,13 @@ public class CollectorsInAction3 {
 
             // find the total salary fund that is distributed for each designation
             // grouping by to a list of employees for particular designation and then calculate the sum of salaries of employee in each group
-            employeesList.stream()
-                    .collect(Collectors.groupingBy(employee -> employee.getDesignation(),
-                            Collectors.summingDouble(employee -> employee.getSalary()));
+            Map<String, Double> fundDistribution = employeesList.stream()
+                    .collect(Collectors.groupingBy(
+                            employee -> employee.getDesignation(),
+                            Collectors.summingDouble(employee -> employee.getSalary())
+                        )
+                    );
+            System.out.println(fundDistribution);
 
 
         } catch (IOException e) {
