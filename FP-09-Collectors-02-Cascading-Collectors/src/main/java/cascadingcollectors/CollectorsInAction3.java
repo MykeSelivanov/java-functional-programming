@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.Spliterator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -24,6 +25,9 @@ public class CollectorsInAction3 {
 
             List<Employee> employeesList = StreamSupport.stream(employeeSpliterator, false)
                                             .collect(Collectors.toList());
+
+            Map<String, List<Employee>> getByDesignation = employeesList.stream()
+                    .collect(Collectors.groupingBy(employee -> employee.getDesignation()));
 
 
         } catch (IOException e) {
