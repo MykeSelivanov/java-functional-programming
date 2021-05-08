@@ -48,7 +48,7 @@ public class CollectorsInAction3 {
                             Collectors.maxBy(Comparator.comparing(employee -> employee.getSalary()))
                             )
                     );
-            System.out.println(fundDistribution);
+            System.out.println(maxSalaryEmployees);
 
 
 
