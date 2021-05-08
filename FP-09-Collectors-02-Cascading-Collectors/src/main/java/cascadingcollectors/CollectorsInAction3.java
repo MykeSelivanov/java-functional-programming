@@ -44,6 +44,17 @@ public class CollectorsInAction3 {
                     );
             System.out.println(fundDistribution);
 
+            // getting an employee with the highest salary in each group
+            Map<String, Double> maxSalaryEmployees = employeesList.stream()
+                    .collect(Collectors.groupingBy(
+                            employee -> employee.getDesignation(),
+                            Collectors.summingDouble(employee -> employee.getSalary())
+                            )
+                    );
+            System.out.println(fundDistribution);
+
+
+
 
         } catch (IOException e) {
             e.printStackTrace();
