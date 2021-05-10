@@ -51,6 +51,9 @@ public class CollectorsInAction3 {
             System.out.println(maxSalaryEmployees);
 
             // getting max salary in each group without comparing the employee objects
+            // in order to achieve this, we will need to transform the list of employees to the list of salaries (doubles)
+            // for that mapping collector can be used as a downstream collector
+
 
 
 
