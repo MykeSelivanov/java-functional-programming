@@ -50,6 +50,8 @@ public class CollectorsInAction3 {
                     );
             System.out.println(maxSalaryEmployees);
 
+            // getting max salary in each group without comparing the employee objects
+
 
 
 
