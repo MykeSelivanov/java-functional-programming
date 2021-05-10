@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
@@ -52,8 +53,16 @@ public class CollectorsInAction3 {
 
             // getting max salary in each group without comparing the employee objects
             // in order to achieve this, we will need to transform the list of employees to the list of salaries (doubles)
-            // for that mapping collector can be used as a downstream collector
-
+            // for that mapping collector can be used as a downstream collector,
+            employeesList.stream()
+                    .collect(Collectors.groupingBy(
+                            employee -> employee.getDesignation(),
+                            // mapping can also have a downstream collector, which can be provided as a second argument
+                            Collectors.mapping(employee -> employee.getSalary(),
+                                    // collector maxBy is taking comparator to compare salaries to identify the biggest one
+                                    // but since comparison will be on the actual salary value, lambda will look like salary -> salary
+                                    Collectors.maxBy(Comparator.comparing(Function.identity())))
+                    )
 
 
 
