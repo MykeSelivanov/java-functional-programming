@@ -1,6 +1,7 @@
 package listfunctionaloperations;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class ListFunctionalOperations {
     public static void main(String[] args) {
@@ -14,6 +15,8 @@ public class ListFunctionalOperations {
                 new Movie("Beauty and the beast",2017,"Hollywood"),
                 new Movie("Slumdog Millionaire",2008,"Bollywood")
         );
+
+
 
 
 
