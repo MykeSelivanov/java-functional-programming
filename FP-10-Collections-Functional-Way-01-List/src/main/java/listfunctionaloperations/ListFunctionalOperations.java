@@ -26,9 +26,15 @@ public class ListFunctionalOperations {
         movies.sort((movie1, movie2) -> movie2.getReleaseYear() - movie1.getReleaseYear());
         movies.forEach(System.out::println);
 
+        System.out.println("==============================================================");
+
         // Filtering the data
         movies.stream()
-                .filter()
+                .filter(movie -> movie.getIndustry().equalsIgnoreCase("Bollywood"))
+                .forEach(System.out::println);
+
+        // Mapping
+
 
 
 
