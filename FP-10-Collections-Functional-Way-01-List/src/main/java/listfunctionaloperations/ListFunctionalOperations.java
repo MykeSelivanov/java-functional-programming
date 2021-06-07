@@ -3,6 +3,7 @@ package listfunctionaloperations;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 
 public class ListFunctionalOperations {
     public static void main(String[] args) {
@@ -33,10 +34,21 @@ public class ListFunctionalOperations {
                 .filter(movie -> movie.getIndustry().equalsIgnoreCase("Bollywood"))
                 .forEach(System.out::println);
 
+        System.out.println("==============================================================");
+
         // Mapping
+        movies.stream()
+                .map(movie -> movie.getName())
+                .forEach(System.out::println);
 
+        System.out.println("==============================================================");
 
-
+        // Reduce - combines the result (getting aggregate output)
+        // getting a single stream containing the names of the movies separated by a single pipeline character
+        Optional<String> movieNamesString = movies.stream()
+                .map(movie -> movie.getName())
+                .reduce((movie1, movie2) -> movie1 + " | " + movie2);
+        System.out.println(movieNamesString);
 
     }
 
