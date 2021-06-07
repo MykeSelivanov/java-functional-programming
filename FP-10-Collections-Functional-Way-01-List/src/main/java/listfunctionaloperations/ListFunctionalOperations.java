@@ -1,6 +1,7 @@
 package listfunctionaloperations;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 public class ListFunctionalOperations {
@@ -16,7 +17,18 @@ public class ListFunctionalOperations {
                 new Movie("Slumdog Millionaire",2008,"Bollywood")
         );
 
+        // Traversal
+        movies.forEach(System.out::println);
 
+        System.out.println("==============================================================");
+
+        // Sorting the movie objects in the descending order of the release year (get the newest movie on the top)
+        movies.sort((movie1, movie2) -> movie2.getReleaseYear() - movie1.getReleaseYear());
+        movies.forEach(System.out::println);
+
+        // Filtering the data
+        movies.stream()
+                .filter()
 
 
 

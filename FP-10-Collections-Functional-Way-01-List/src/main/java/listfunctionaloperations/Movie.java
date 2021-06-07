@@ -16,5 +16,12 @@ public class Movie {
         this.setIndustry(industry);
     }
 
-
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "name='" + name + '\'' +
+                ", releaseYear=" + releaseYear +
+                ", industry='" + industry + '\'' +
+                '}';
+    }
 }
