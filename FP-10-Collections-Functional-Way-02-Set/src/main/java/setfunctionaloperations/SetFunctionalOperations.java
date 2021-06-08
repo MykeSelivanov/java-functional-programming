@@ -3,6 +3,7 @@ package setfunctionaloperations;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+import java.util.stream.Collectors;
 
 public class SetFunctionalOperations {
     public static void main(String[] args) {
@@ -28,6 +29,15 @@ public class SetFunctionalOperations {
         setOfNums.stream()
                 .sorted()
                 .forEach(num -> System.out.printf("%d ", num));
+
+        System.out.println("\n==============================================================");
+
+        // Map
+        // map integers to double values
+        Set<Double> setOfDoubles = setOfNums.stream()
+                .map(num -> Double.valueOf(num))
+                .collect(Collectors.toSet());
+        setOfDoubles.forEach(num -> System.out.printf("%f ", num));
 
     }
 
