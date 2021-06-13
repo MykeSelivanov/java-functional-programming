@@ -26,9 +26,18 @@ public class SetFunctionalOperations {
         // there is no default sort() method for Set interface, if you want to insert elements in a sorted order,
         // instead of a Hashset you need to use a SortedSet and implement it as a TreeSet class like - SortedSet<Integer> set = new TreeSet<>();
         // but if you want to sort a Hashset, you can still use sorted() method from collections after creating a stream on the set and providing comparator
+        // a using hashset and sorted()  method for stream
+        System.out.println("stream().sorted()");
         setOfNums.stream()
                 .sorted()
                 .forEach(num -> System.out.printf("%d ", num));
+
+        // using TreeSet() in collector that will be collecting values in sorted order
+        TreeSet<Integer> sortedInATreeSet = setOfNums.stream()
+                .collect(Collectors.toCollection(TreeSet::new));
+
+        System.out.println("\nTreeSet");
+        sortedInATreeSet.forEach(num -> System.out.printf("%d ", num));
 
         System.out.println("\n==============================================================");
 
