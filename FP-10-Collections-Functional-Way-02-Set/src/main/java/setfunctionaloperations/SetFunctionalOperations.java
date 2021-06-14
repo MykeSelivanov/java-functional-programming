@@ -55,7 +55,7 @@ public class SetFunctionalOperations {
         int sum = setOfNums.stream()
                 .mapToInt(element -> element)
                 .sum();
-        System.out.println("\n" + sum);
+        System.out.println(sum);
 
     }
 
