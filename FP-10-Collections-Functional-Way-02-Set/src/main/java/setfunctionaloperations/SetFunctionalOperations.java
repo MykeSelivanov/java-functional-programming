@@ -48,6 +48,15 @@ public class SetFunctionalOperations {
                 .collect(Collectors.toSet());
         setOfDoubles.forEach(num -> System.out.printf("%f ", num));
 
+        System.out.println("\n==============================================================");
+
+        // Reduce
+        // calculate sum of all elements present in the Set
+        int sum = setOfNums.stream()
+                .mapToInt(element -> element)
+                .sum();
+        System.out.println("\n" + sum);
+
     }
 
 }
