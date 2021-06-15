@@ -15,5 +15,11 @@ public class MapFunctionalOperations {
         contacts.put("0507643271", "Edgar");
         contacts.put("3114567898", "Alice");
 
+        // Traversal
+        contacts.forEach((key, value) -> System.out.println(key + " - " + value));
+
+        // Filter
+
+
     }
 }
