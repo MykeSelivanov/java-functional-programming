@@ -2,6 +2,7 @@ package mapfunctionaloperations;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MapFunctionalOperations {
     public static void main(String[] args) {
@@ -25,6 +26,12 @@ public class MapFunctionalOperations {
         contacts.entrySet().stream()
                 .filter(contact -> "John".equalsIgnoreCase(contact.getValue()))
                 .forEach(System.out::println);
+
+        Map<String, String> filteredContacts = contacts.entrySet().stream()
+                .filter(contact -> "John".equalsIgnoreCase(contact.getValue()))
+                .collect(Collectors.toMap(contact -> contact.getKey(), contact -> contact.getValue()));
+
+        System.out.println(filteredContacts);
 
         System.out.println("--------------------");
 
