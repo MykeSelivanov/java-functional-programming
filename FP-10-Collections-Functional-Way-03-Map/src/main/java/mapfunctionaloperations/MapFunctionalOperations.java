@@ -21,6 +21,12 @@ public class MapFunctionalOperations {
         System.out.println("--------------------");
 
         // Filter
+        // Filter out contact number of John
+        contacts.entrySet().stream()
+                .filter(contact -> "John".equalsIgnoreCase(contact.getValue()))
+                .forEach(System.out::println);
+
+        System.out.println("--------------------");
 
 
     }
