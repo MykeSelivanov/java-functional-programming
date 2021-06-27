@@ -47,12 +47,18 @@ public class MapFunctionalOperations {
         System.out.println("--------------------");
 
         // Soring of map elements
-        contacts.entrySet().stream()
-        .sorted(Map.Entry.comparingByValue())
-                // keymapper, valuemapper, mergeFunction (what to do in case of duplicates), mapFactory (in example below will be used LinkedHashMap as it is preserving the insertion order)
+        LinkedHashMap<String, String> sortedContactsMapByValue = contacts.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue())
+                // keymapper, valuemapper,
+                // mergeFunction (what to do if 2 duplicate keys will be generated, for eg (val1, val2) -> val1 will pick up only val1 to avoid duplicates),
+                // mapFactory (in example below will be used LinkedHashMap as it is preserving the insertion order)
                 .collect(Collectors.toMap(contact -> contact.getKey(), contact -> contact.getValue(), (value1, value2) -> value1, LinkedHashMap::new));
 
+        sortedContactsMapByValue.forEach((key, value) -> System.out.println(key + " - " + value));
 
+        System.out.println("--------------------");
+
+        // Reduce
 
 
     }
