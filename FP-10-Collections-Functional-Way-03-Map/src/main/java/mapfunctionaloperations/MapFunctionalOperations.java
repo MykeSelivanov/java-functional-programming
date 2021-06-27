@@ -18,6 +18,8 @@ public class MapFunctionalOperations {
         // Traversal
         contacts.forEach((key, value) -> System.out.println(key + " - " + value));
 
+        System.out.println("--------------------");
+
         // Filter
 
 
