@@ -1,6 +1,7 @@
 package mapfunctionaloperations;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -47,7 +48,8 @@ public class MapFunctionalOperations {
 
         // Soring of map elements
         contacts.entrySet().stream()
-
+        .sorted(Map.Entry.comparingByValue())
+                .collect(Collectors.toMap(contact -> contact.getKey(), contact -> contact.getValue(), (value1, value2) -> value1, LinkedHashMap::new));
 
 
 
