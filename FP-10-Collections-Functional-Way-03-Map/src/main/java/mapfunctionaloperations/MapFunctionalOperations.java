@@ -49,6 +49,7 @@ public class MapFunctionalOperations {
         // Soring of map elements
         contacts.entrySet().stream()
         .sorted(Map.Entry.comparingByValue())
+                // keymapper, valuemapper, mergeFunction (what to do in case of duplicates), mapFactory (in example below will be used LinkedHashMap as it is preserving the insertion order)
                 .collect(Collectors.toMap(contact -> contact.getKey(), contact -> contact.getValue(), (value1, value2) -> value1, LinkedHashMap::new));
 
 
