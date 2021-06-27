@@ -35,6 +35,18 @@ public class MapFunctionalOperations {
 
         System.out.println("--------------------");
 
+        // Map
+        String contactNames = contacts.entrySet().stream()
+                .map(contact -> contact.getValue())
+                .distinct() // to avoid duplicate names
+                .collect(Collectors.joining(" , "));
+
+        System.out.println(contactNames);
+
+        System.out.println("--------------------");
+
+
+
 
     }
 }
