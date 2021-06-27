@@ -45,6 +45,10 @@ public class MapFunctionalOperations {
 
         System.out.println("--------------------");
 
+        // Soring of map elements
+        contacts.entrySet().stream()
+
+
 
 
 
