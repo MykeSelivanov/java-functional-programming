@@ -27,7 +27,6 @@ public class Intro {
      *
      *      Functional data structure - Secure
      *                                  Immutable
-     *
      */
 
 
