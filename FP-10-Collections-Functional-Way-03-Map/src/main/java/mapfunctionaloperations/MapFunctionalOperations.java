@@ -3,6 +3,7 @@ package mapfunctionaloperations;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.OptionalDouble;
 import java.util.stream.Collectors;
 
 public class MapFunctionalOperations {
@@ -65,6 +66,10 @@ public class MapFunctionalOperations {
         marks.put("English", 72.0);
         marks.put("History", 94.0);
 
+        OptionalDouble average = marks.values().stream()
+                .mapToDouble(mark -> mark) // need to convert to primitive stream first, in order to perform average()
+                .average();
+        System.out.println(average.getAsDouble());
 
     }
 }
