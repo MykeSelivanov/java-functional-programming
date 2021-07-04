@@ -59,6 +59,11 @@ public class MapFunctionalOperations {
         System.out.println("--------------------");
 
         // Reduce
+        Map<String,Double> marks = new HashMap<>();
+        marks.put("Science", 75.0);
+        marks.put("Math", 80.0);
+        marks.put("English", 72.0);
+        marks.put("History", 94.0);
 
 
     }
