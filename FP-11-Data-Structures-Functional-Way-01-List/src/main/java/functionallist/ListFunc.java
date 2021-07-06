@@ -1,5 +1,7 @@
 package functionallist;
 
+import java.util.function.Consumer;
+
 public abstract class ListFunc<T> {
 
     public abstract T head();
@@ -66,6 +68,34 @@ public abstract class ListFunc<T> {
         @Override
         public boolean isEmpty() {
             return length() == 0 ? true : false;
+        }
+    }
+
+    public static <T> ListFunc<T> list(){
+        return NIL;
+    }
+
+    public static <T> ListFunc<T> list(T...t) {
+        ListFunc<T> temp = list();
+
+        for(int i = t.length - 1; i >= 0; i--){
+            temp = new Const<T>(t[i], temp);
+        }
+        return temp;
+    }
+
+    public ListFunc<T> addElement(T element) {
+        return new Const<T>(element, this);
+    }
+
+    public void forEach(Consumer<? super T> action) {
+        T current = this.head();
+        ListFunc<T> temp = this;
+
+        for( int i = 0; i < length(); i++) {
+            action.accept(current);
+            temp = temp.tail();
+            current = temp.head();
         }
     }
 }
