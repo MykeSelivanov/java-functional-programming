@@ -98,4 +98,20 @@ public abstract class ListFunc<T> {
             current = temp.head();
         }
     }
+
+    public ListFunc<T> removeElement(T element){
+        if(this.length == 0) {
+            return this;
+        }
+        else if(element.equals(this.head())) {
+            return tail();
+        } else {
+            ListFunc<T> newTail = tail().removeElement(element);
+            if(newTail.equals(tail())) {
+                return this;
+            }
+            return new Const<T>(head(), newTail);
+        }
+    }
+
 }
