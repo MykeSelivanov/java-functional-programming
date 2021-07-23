@@ -13,5 +13,7 @@ public class ListFuncDemo {
         listFunc1.forEach(System.out::println);
 
 
+
+
     }
 }
