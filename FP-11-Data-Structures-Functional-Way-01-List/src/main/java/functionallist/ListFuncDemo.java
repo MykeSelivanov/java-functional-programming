@@ -25,6 +25,14 @@ public class ListFuncDemo {
         ListFunc<Integer> reversedList = listFunc.reverseList();
         reversedList.forEach(System.out::println);
 
+        System.out.println("--------------------");
+
+        // concat 2 lists
+        ListFunc<Integer> list1 = ListFunc.list(1,2,3,4,5,6);
+        ListFunc<Integer> list2 = ListFunc.list(7,8,9);
+        ListFunc<Integer> mergedList = ListFunc.concat(list1, list2);
+
+        mergedList.forEach(System.out::println);
 
     }
 }

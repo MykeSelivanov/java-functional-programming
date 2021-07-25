@@ -122,4 +122,9 @@ public abstract class ListFunc<T> {
         return list;
     }
 
+    public static <T> ListFunc<T> concat(ListFunc<T> list1, ListFunc<T> list2){
+        return list1.isEmpty()
+                ? list2
+                    : new Const<>(list1.head(), concat(list1.tail(), list2));
+    }
 }
