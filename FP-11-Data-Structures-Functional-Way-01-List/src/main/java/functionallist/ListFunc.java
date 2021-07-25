@@ -1,5 +1,6 @@
 package functionallist;
 
+import java.util.Collection;
 import java.util.function.Consumer;
 
 public abstract class ListFunc<T> {
@@ -14,8 +15,7 @@ public abstract class ListFunc<T> {
     public static final ListFunc NIL = new Nil();
 
     private static class Nil<T> extends ListFunc<T> {
-        private Nil(){
-        };
+        private Nil() {}
 
         @Override
         public T head() {
@@ -33,10 +33,10 @@ public abstract class ListFunc<T> {
         }
     }
 
-    public int length(){
+    public int length() {
         int l = 0;
         ListFunc<T> temp = this;
-        while(!temp.equals(NIL)) {
+        while (!temp.equals(NIL)) {
             l++;
             temp = temp.tail();
         }
@@ -69,14 +69,14 @@ public abstract class ListFunc<T> {
         }
     }
 
-    public static <T> ListFunc<T> list(){
+    public static <T> ListFunc<T> list() {
         return NIL;
     }
 
-    public static <T> ListFunc<T> list(T...t) {
+    public static <T> ListFunc<T> list(T... t) {
         ListFunc<T> temp = list();
 
-        for(int i = t.length - 1; i >= 0; i--){
+        for (int i = t.length - 1; i >= 0; i--) {
             temp = new Const<T>(t[i], temp);
         }
         return temp;
@@ -90,18 +90,17 @@ public abstract class ListFunc<T> {
         T current = this.head();
         ListFunc<T> temp = this;
 
-        for( int i = 0; i < length(); i++) {
+        for (int i = 0; i < length(); i++) {
             action.accept(current);
             temp = temp.tail();
             current = temp.head();
         }
     }
 
-    public ListFunc<T> removeElement(T element){
-        if(this.length() == 0) {
+    public ListFunc<T> removeElement(T element) {
+        if (this.length() == 0) {
             return this;
-        }
-        else if(element.equals(this.head())) {
+        } else if (element.equals(this.head())) {
             return tail();
         } else {
             ListFunc<T> newTail = tail().removeElement(element);
@@ -109,12 +108,12 @@ public abstract class ListFunc<T> {
         }
     }
 
-    public ListFunc<T> reverseList(){
+    public ListFunc<T> reverseList() {
         ListFunc<T> list = list();
         T current = this.head();
         ListFunc<T> temp = this;
 
-        while(!temp.equals(NIL)) {
+        while (!temp.equals(NIL)) {
             list = list.addElement(current);
             temp = temp.tail();
             current = temp.head();
@@ -122,9 +121,17 @@ public abstract class ListFunc<T> {
         return list;
     }
 
-    public static <T> ListFunc<T> concat(ListFunc<T> list1, ListFunc<T> list2){
+    public static <T> ListFunc<T> concat(ListFunc<T> list1, ListFunc<T> list2) {
         return list1.isEmpty()
                 ? list2
-                    : new Const<>(list1.head(), concat(list1.tail(), list2));
+                : new Const<>(list1.head(), concat(list1.tail(), list2));
+    }
+
+    public ListFunc<T> addAllElements(final Collection<? extends T> collection) {
+        ListFunc<T> result = this;
+        for (T t : collection) {
+            result = result.addElement(t);
+        }
+        return result;
     }
 }

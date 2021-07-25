@@ -1,5 +1,7 @@
 package functionallist;
 
+import java.util.List;
+
 public class ListFuncDemo {
     public static void main(String[] args) {
 
@@ -33,6 +35,15 @@ public class ListFuncDemo {
         ListFunc<Integer> mergedList = ListFunc.concat(list1, list2);
 
         mergedList.forEach(System.out::println);
+
+        System.out.println("--------------------");
+
+        // create a functional list from another Collection
+        // TODO: debug what could be the issue that list is not adding elements
+        List<Integer> integerList = List.of(11,12,13,14,15,16,17);
+        ListFunc<Integer> listFuncInts = ListFunc.list();
+        listFuncInts.addAllElements(integerList);
+        listFuncInts.forEach(System.out::println);
 
     }
 }
