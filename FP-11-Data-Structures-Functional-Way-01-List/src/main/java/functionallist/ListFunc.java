@@ -109,6 +109,17 @@ public abstract class ListFunc<T> {
         }
     }
 
+    public ListFunc<T> reverseList(){
+        ListFunc<T> list = list();
+        T current = this.head();
+        ListFunc<T> temp = this;
 
+        while(!temp.equals(NIL)) {
+            list = list.addElement(current);
+            temp = temp.tail();
+            current = temp.head();
+        }
+        return list;
+    }
 
 }

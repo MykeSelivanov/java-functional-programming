@@ -19,6 +19,12 @@ public class ListFuncDemo {
         ListFunc<Integer> listWithout5 = listFunc.removeElement(5);
         listWithout5.forEach(System.out::println);
 
+        System.out.println("--------------------");
+
+        // reverse list
+        ListFunc<Integer> reversedList = listFunc.reverseList();
+        reversedList.forEach(System.out::println);
+
 
     }
 }
