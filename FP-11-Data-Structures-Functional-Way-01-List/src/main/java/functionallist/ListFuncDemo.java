@@ -5,6 +5,14 @@ import java.util.List;
 public class ListFuncDemo {
     public static void main(String[] args) {
 
+        /**
+         * Time complexity of operations
+         * list() - O(1)
+         * addElement() - O(1)
+         * reverse() - O(n)
+         *
+         */
+
         ListFunc<Integer> listFunc = ListFunc.list(3,7,9,5,14,11);
         // for each
         listFunc.forEach(System.out::println);
