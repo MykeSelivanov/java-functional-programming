@@ -31,6 +31,7 @@ public abstract class ListFunc<T> {
         public boolean isEmpty() {
             return true;
         }
+
     }
 
     public int length() {
