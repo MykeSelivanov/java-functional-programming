@@ -8,6 +8,7 @@ public final class QueueFunc<T> {
     public QueueFunc() {
         this.front = ListFunc.list();
         this.rear = ListFunc.list();
+
     }
 
 
