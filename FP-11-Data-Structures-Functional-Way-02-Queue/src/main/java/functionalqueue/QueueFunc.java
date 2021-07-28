@@ -21,5 +21,12 @@ public final class QueueFunc<T> {
         this.rear = frontIsEmpty ? queue.rear : queue.rear.addElement(element);
     }
 
+    // enqueue
+    public QueueFunc<T> enqueue(T t){
+        return new QueueFunc<T>(this, t);
+    }
+
+    
+
 
 }
