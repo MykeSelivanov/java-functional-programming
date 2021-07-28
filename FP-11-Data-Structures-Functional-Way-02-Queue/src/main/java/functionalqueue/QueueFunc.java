@@ -26,7 +26,17 @@ public final class QueueFunc<T> {
         return new QueueFunc<T>(this, t);
     }
 
-    
+    // dequeue
+    private QueueFunc(ListFunc<T> front, ListFunc<T> rear){
+        final boolean frontIsEmpty = front.isEmpty();
+        this.front = frontIsEmpty ? rear.reverseList() : front;
+        this.rear = frontIsEmpty ? front : rear;
+    }
+
+    public QueueFunc<T> dequeue() {
+        return new QueueFunc<T>(this.front.tail(), rear);
+    }
+
 
 
 }
