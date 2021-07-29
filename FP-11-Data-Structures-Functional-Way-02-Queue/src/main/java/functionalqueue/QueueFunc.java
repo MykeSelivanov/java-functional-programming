@@ -1,5 +1,7 @@
 package functionalqueue;
 
+import java.util.function.Consumer;
+
 public final class QueueFunc<T> {
 
     private final ListFunc<T> front;
@@ -35,6 +37,16 @@ public final class QueueFunc<T> {
 
     public QueueFunc<T> dequeue() {
         return new QueueFunc<T>(this.front.tail(), rear);
+    }
+
+    void forEach(Consumer<? super T> action){
+        T current = this.front.head();
+        ListFunc<T> temp = ListFunc.concat(this.front.tail(), this.rear.reverseList());
+        while(temp != null){
+            action.accept(current);
+            current = temp.head();
+            temp = temp.tail();
+        }
     }
 
 
