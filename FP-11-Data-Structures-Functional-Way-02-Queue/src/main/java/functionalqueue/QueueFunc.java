@@ -49,6 +49,17 @@ public final class QueueFunc<T> {
         }
     }
 
+    public int size(){
+        return front.length() + rear.length();
+    }
+
+    public T peek(){
+        if(this.size() == 0){
+            return null;
+        }
+        return this.front.head();
+    }
+
 
 
 }
