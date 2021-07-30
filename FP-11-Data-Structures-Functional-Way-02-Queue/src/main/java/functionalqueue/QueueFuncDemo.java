@@ -10,7 +10,10 @@ public class QueueFuncDemo {
 
         System.out.println("-----------------");
 
-        
+        QueueFunc<String> dequeueElement = queueElements.dequeue();
+        dequeueElement.forEach(System.out::println);
+
+        System.out.println("-----------------");
 
     }
 }
