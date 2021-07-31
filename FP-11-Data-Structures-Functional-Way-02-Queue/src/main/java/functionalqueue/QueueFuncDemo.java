@@ -17,5 +17,9 @@ public class QueueFuncDemo {
 
         System.out.println(dequeueElements.peek());
 
+        System.out.println("-----------------");
+
+        System.out.println(dequeueElements.isEmpty());
+
     }
 }
