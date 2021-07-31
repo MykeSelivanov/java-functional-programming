@@ -60,6 +60,14 @@ public final class QueueFunc<T> {
         return this.front.head();
     }
 
+    public boolean isEmpty(){
+        if(this.front.isEmpty() == this.rear.isEmpty() == true) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
 
 }
