@@ -21,5 +21,9 @@ public class QueueFuncDemo {
 
         System.out.println(dequeueElements.isEmpty());
 
+        System.out.println("-----------------");
+
+        System.out.println(dequeueElements.size());
+
     }
 }
