@@ -1,5 +1,7 @@
 package functionaltree;
 
+import java.util.stream.StreamSupport;
+
 @SuppressWarnings("rawtypes")
 public class TreeFunc<E extends Comparable<E>> {
 
@@ -18,6 +20,23 @@ public class TreeFunc<E extends Comparable<E>> {
         right = NIL;
         size = 0;
         height = -1;
+    }
+
+    private TreeFunc(TreeFunc<E> left, E value, TreeFunc<E> right) {
+        this.left = left;
+        this.value = value;
+        this.right = right;
+        this.size = 1 + this.left.size + this.right.size;
+        this.height = 1 + Math.max(this.left.height, this.right.height);
+    }
+
+    @SafeVarargs
+    public static <E extends Comparable<E>> TreeFunc<E> tree(E...es){
+
+    }
+
+    public String toString(){
+        return String.format("( %s %s %s )", left, value, right);
     }
 
 
