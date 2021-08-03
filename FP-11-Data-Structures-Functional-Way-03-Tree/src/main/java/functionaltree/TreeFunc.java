@@ -32,7 +32,11 @@ public class TreeFunc<E extends Comparable<E>> {
 
     @SafeVarargs
     public static <E extends Comparable<E>> TreeFunc<E> tree(E...es){
-
+        TreeFunc<E> tree = NIL;
+        for (int i = 0; i < es.length; i++){
+            tree = tree.insert(es[i]);
+        }
+        return tree;
     }
 
     public String toString(){
