@@ -39,6 +39,14 @@ public class TreeFunc<E extends Comparable<E>> {
         return tree;
     }
 
+    private TreeFunc<E> insert(E newValue){
+        return isEmpty();
+    }
+
+    private boolean isEmpty(){
+        return size == 0 ? true : false;
+    }
+
     public String toString(){
         return String.format("( %s %s %s )", left, value, right);
     }
