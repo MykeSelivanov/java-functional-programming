@@ -51,7 +51,7 @@ public class TreeFunc<E extends Comparable<E>> {
     }
 
     public String toString(){
-        return String.format("( %s %s %s )", left, value, right);
+        return this.value != null ? String.format("( %s %s %s )", left, value, right) : "";
     }
 
 
