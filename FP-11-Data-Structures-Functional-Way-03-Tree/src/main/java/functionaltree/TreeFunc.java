@@ -40,7 +40,10 @@ public class TreeFunc<E extends Comparable<E>> {
     }
 
     private TreeFunc<E> insert(E newValue){
-        return isEmpty();
+        return isEmpty() ? new TreeFunc<E>(NIL, newValue, NIL)
+                : newValue.compareTo(this.value) < 0 ? new TreeFunc<E>(left.insert(newValue), this.value, this.right)
+                    : newValue.compareTo(this.value) > 0 ? new TreeFunc<E>(this.left, this.value, right.insert(newValue))
+                        : new TreeFunc<E>(this.left, newValue, this.right);
     }
 
     private boolean isEmpty(){
