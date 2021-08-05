@@ -46,6 +46,43 @@ public class TreeFunc<E extends Comparable<E>> {
                         : new TreeFunc<E>(this.left, newValue, this.right);
     }
 
+    public TreeFunc<E> remove(E element){
+        if (element.compareTo(this.value) < 0) {
+            return new TreeFunc<E>(this.left.remove(element), this.value, this.right);
+        } else if (element.compareTo(this.value) > 0) {
+            return new TreeFunc<E>(this.left, this.value, this.right.remove(element));
+        } else {
+            return left.merge(right);
+        }
+    }
+
+    private TreeFunc<E> merge(TreeFunc<E> right){
+        if (this.isEmpty()) {
+            return right;
+        } else if (right.isEmpty()) {
+            return this;
+        } else {
+            return new TreeFunc<E>(this.left.merge(this.right),this.value,right);
+        }
+    }
+
+    public boolean isMember(E value){
+        if(this.value != null) {
+            if (value.compareTo(this.value) < 0) {
+                return left.isMember(value);
+            } else if (value.compareTo(this.value) > 0) {
+                return right.isMember(value);
+            } else {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public E maxElement() {
+       return this.right.equals(NIL) ? this.value : this.right.maxElement();
+    }
+
     private boolean isEmpty(){
         return size == 0 ? true : false;
     }
