@@ -39,4 +39,9 @@ public class Entry {
     public void setNext(Entry next) {
         this.next = next;
     }
+
+    @Override
+    public String toString() {
+        return "key: " + key + " value: " + value + " next= " + next;
+    }
 }
