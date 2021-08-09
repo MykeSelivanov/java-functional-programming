@@ -32,4 +32,19 @@ public class MapFunc<K,V> {
 
         return new MapFunc<K, V>(entries, size);
     }
+
+    public V getValue(K key){
+        V val = null;
+        int hash = getHash(key);
+        Entry entry = entries[hash];
+
+        while(entry.next != null) {
+            if(key.equals(entry.getKey())) {
+                val = (V) entry.getValue();
+                break;
+            }
+            entry = entry.next;
+        }
+        return val;
+    }
 }
