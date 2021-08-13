@@ -40,11 +40,8 @@ public class MapFunc<K,V> {
         boolean result = false;
         Entry entry = entries[getHash(key)];
         while(entry != null) {
-            if(key.equals(entry.key)){
-                result = true;
-            } else {
+            if(key.equals(entry.key)) result = true;
                 entry = entry.next;
-            }
         }
         return result;
     }
