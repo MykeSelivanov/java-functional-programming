@@ -26,11 +26,27 @@ public class MapFunc<K,V> {
     public MapFunc<K, V> put(K key, V value){
         int hash = getHash(key);
         Entry existingEntry = entries[hash];
+        if(isDuplicate(key)){
+            existingEntry.value = value;
+        }
         Entry newEntry = new Entry(key, value);
         entries[hash] = newEntry;
         newEntry.next = existingEntry;
 
         return new MapFunc<K, V>(entries, size);
+    }
+
+    private boolean isDuplicate(K key) {
+        boolean result = false;
+        Entry entry = entries[getHash(key)];
+        while(entry != null) {
+            if(key.equals(entry.key)){
+                result = true;
+            } else {
+                entry = entry.next;
+            }
+        }
+        return result;
     }
 
     public V getValue(K key){
