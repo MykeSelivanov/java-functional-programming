@@ -63,4 +63,10 @@ public class MapFunc<K,V> {
         }
         return val;
     }
+
+    public void display() {
+        for (int i = 0; i < this.entries.length; i++) {
+            System.out.println(this.entries[i]);
+        }
+    }
 }
