@@ -1,7 +1,7 @@
 # Functional programming
 Study guide with practical examples and explanations for the main concepts of
 Functional programming <br>
-+ Data Structures implementation in functional way: List, Queue, Tree, Map
+\+ Data Structures implementation in functional way: List, Queue, Tree, Map
 
 
 ## Technologies
