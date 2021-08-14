@@ -14,6 +14,5 @@ public class MapFuncDemo {
         mapFunc.put(100, "Oliver");
 
         mapFunc.display();
-
     }
 }
